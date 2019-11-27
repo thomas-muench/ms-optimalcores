@@ -1,0 +1,17 @@
+.DS_Store
+ms/*.aux
+ms/*.log
+ms/*.out
+ms/*.xml
+ms/*.bbl
+ms/*.blg
+ms/*.bcf
+ms/*.synctex.gz
+ms/*.pdf
+ms/*.pagelist
+diff/
+drafts/
+plots/
+published/
+proof/
+revision/
