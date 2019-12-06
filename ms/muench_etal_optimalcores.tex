@@ -136,6 +136,125 @@ sampling can increase the correlation with the target temperature by x-y\,\%
 when averaging x-y cores as compared to a local reconstruction using only a
 single record (\#EDIT).
 
+\section{Data and methods}\label{methods}
+
+\subsection{Climate model data}\label{methods:data}
+
+We use data of the past-millennium simulation (800--2000\,CE; \#REF:Sjolte2018)
+of the fully coupled ECHAM5/MPI-OM-wiso atmosphere--ocean general circulation
+model equipped with stable isotope diagnostics (\#REF:Werner2016). This
+simulation is forced by greenhouse gases, volcanic aerosols, total solar
+irradiance and changes in land use and Earth's orbital parameters. The
+atmospheric component of the model has a T31 spectral resolution
+($3.75\degree\times3.75\degree$) with $19$ vertical levels
+(\#REF:Sjolte2018). Compared to observations, the atmospheric model ECHAM5-wiso
+generally reproduces the climatological relation between temperature and
+precipitation isotopic composition well, but has, in the used T31 setup, a warm
+bias and is not depleted enough in isotopic composition over Antarctica
+(\#REF:Werner2011). This can be improved by a higher spatial resolution
+(\#REF:Werner2011) but is not relevant for our study since we are mainly
+interested in the relative variability between sites. The full atmosphere--ocean
+model was evaluated against observations for equilibrium simulations under
+pre-industrial and Last Glacial Maximum conditions (\#REF:Werner2016), and the
+past-millennium simulation was used to reconstruct North Atlantic atmospheric
+circulation in combination with ice-core isotope data (\#REF:Sjolte2018).
+
+Here, we use the ECHAM5/MPI-OM-wiso time series for all model grid cells
+on the Antarctic continent (in total $442$) of two-metre air temperature
+($T_{2\mathrm{m}}$), precipitation ($p$) and oxygen isotopic composition in
+precipitation (relative abundance of oxygen-18 to oxygen-16 istopes,
+$\delta^{18}\mathrm{O}$).
+
+\subsection{Data processing}\label{methods:prc}
+
+The model simulation output has monthly temporal resolution, while ice-core
+isotope records are typically analysed on annual or longer resolution achieved
+by averaging the isotopic data across the respective amount of snow and
+ice. The annual data of isotopic composition will then include a weighting
+effect due to the intra-annual variability in the amount of precipitation. To
+account for this, we produce two versions of annual data from the monthly model
+output: (1) the two-metre temperature and oxygen isotopic composition are simply
+averaged to annual resolution without any weighting ($T_{2\mathrm{m}}$ and
+$\delta^{18}\mathrm{O}$ in the following), (2) the respective monthly data is
+averaged to annual resolution including a weighting by the monthly amount of
+precipitation (denoted as precipitation-weighted data
+$T_{2\mathrm{m}}^{\mathrm{(pw)}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ in
+the following).
+
+\subsection{Methods to analyse the model data}\label{methods:main}
+
+We mimick ice-core isotope records by associating them with the
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series at the model grid cells. We
+thus neglect stratigraphic noise and any post-depositional effects on the
+isotopic record since here we are interested in the upper limit of the extent to
+which ice cores can reconstruct the climatic temperature signal.
+
+All methods principally rely on estimating correlations between model variables
+based on the Pearson correlation coefficient.
+
+\subsubsection{Picking optimal sites}\label{methods:picking}
+
+To obtain the optimal set of cores to reconstruct $T_{2\mathrm{m}}$
+at a given grid cell $r_0$ (target site), we randomly pick $N$ grid cells
+in a circle with a radius of $1000$\,km around the target site and correlate the
+average isotopic time series from these grid cells with the target site
+temperature. The optimal set of cores for each $N$ is then determined from the
+maximum correlation across all picking trials. To ensure stable results, we set
+the maximum number of trials to $n=1000$ (\#EDIT:check/update this number).
+
+\subsubsection{Generalisation to optimal core spacings}\label{methods:general}
+
+The optimal sites determined from the picking approach described previously will
+strongly depend on the used model simulation and the analysed time span. To
+overcome this issue, we generalise the approach by defining consecutive rings
+around a target site of $250$\,km radial width until a maximum distance from the
+target of $2000$\,km (\#ADDFIGURE). We determine all grid cells that fall into
+each of these rings and then assess the possibilities of combining $N$ grid
+cells. This is implemented as a two-step process: (1) we determine all possible
+combinations of selecting $N$ rings, and then, (2), identify for each ring
+combination the possibilities of combining grid cells from these rings. For this
+second part, it is analytically feasible to identify all possible grid-cell
+combinations until $N=2$; for $N\geq3$ we have to resort to Monte Carlo sampling
+here, for which we use a maximum number of Monte Carlo trials of $n=1000$
+(\#EDIT:check/update this number). Finally, for a specific ring combination, we
+average the $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series for each
+grid-cell combination and compute the correlation with the target temperature.
+We report the expected correlation for this ring combination by averaging across
+the correlations of all analysed grid-cell combinations.
+
+\subsubsection{Estimate of decorrelation lengths}\label{methods:decor.model}
+
+Spatial decorrelation lengths are estimated throughout the paper by fitting an
+isotropic exponential model to the correlation--distance dependence at a target
+site of the form
+\begin{equation}\label{eq:decor.model}
+c(r) = \exp{\left(-\frac{r}{\tau}\right)},
+\end{equation}
+where $c(r)$ is the fitted correlation at some distance $r$ from the target site
+and $\tau$ is the estimated decorrelation length, at which the correlation has
+declined to $1/e$ ($\sim37\,\%$). The input relationship between correlation and
+distance for the variable in question is obtained from correlating the time
+series at the target site with every other grid cell on the Antarctic continent
+and recording the respective distances between the grid cell
+centres.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
