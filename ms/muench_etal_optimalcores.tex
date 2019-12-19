@@ -212,7 +212,7 @@ The optimal sites determined from the picking approach described above will
 strongly depend on the used model simulation and the analysed time span. To
 overcome this issue, we generalise the approach by defining consecutive rings
 around a target site of $250$\,km radial width until a maximum distance from the
-target of $2000$\,km (\#ADDFIGURE). We determine all grid cells that fall into
+target of $2000$\,km (Fig.~\ref{fig:concept}). We determine all grid cells that fall into
 each of these rings and then assess the possibilities of combining $N$ grid
 cells. This is implemented as a two-step process: (1) we determine all possible
 combinations of selecting $N$ rings with replacement, and then, (2), identify
@@ -225,6 +225,18 @@ combination, we average the $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series
 for each grid-cell combination and compute the correlation with the target
 site temperature. We report the expected correlation for this ring combination
 by averaging across all correlations of the analysed grid-cell combinations.
+
+%f01
+\begin{figure}[t]%
+\centering
+\includegraphics[width=8.5cm]{../plots/echam5_mpiom_wiso_fig_01.pdf}
+\caption[Conceptual approach]{%
+  Conceptual sketch of the applied general approach. Around a given Antarctic
+  target site (black cross), we define consecutive rings (red lines) of
+  $250$\,km radial width and analyse all model grid cells that fall into each of
+  the rings.}
+\label{fig:concept}%
+\end{figure}%
 
 \subsubsection{Estimation of decorrelation lengths}\label{methods:decor.model}
 
