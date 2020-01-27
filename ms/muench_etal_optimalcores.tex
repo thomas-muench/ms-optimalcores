@@ -229,7 +229,7 @@ by averaging across all correlations of the analysed grid-cell combinations.
 %f01
 \begin{figure}[t]%
 \centering
-\includegraphics[width=8.3cm]{../plots/echam5_mpiom_wiso_fig_01.pdf}
+\includegraphics[width=6.5cm]{../plots/main/fig_01.pdf}
 \caption[Conceptual approach]{%
   Conceptual sketch of the applied general approach. Around a given Antarctic
   target site (black cross), we define consecutive rings (red lines) of
@@ -258,134 +258,177 @@ centres.
 
 \subsection{Spatial correlation structures}\label{results:cor.struct}
 
-We first examine the spatial correlation structures of the analysed model
+We first examine the spatial correlation structure of the analysed model
 variables.
 
-%\subsubsection{Temperature decorrelation scales}
-
 The near-surface atmospheric temperature field over Antarctica generally
-exhibits large-scale coherent variations with a clear two-part structure. For
-the most regions on the East Antarctic Plateau, the temperature field has
-typical decorrelation lengths of $\sim1500$ to $2500$\,km
-(Fig.~\ref{fig:decor.lengths}), while for larger parts of the West Antarctic Ice
-Sheet and for the Antarctic Peninsula the decorrelation lengths are
-significantly lower with values below $1000$\,km. \#EDIT: already add a small
-discussion what this means for ice cores, reiterating the introduction?
+exhibits large-scale coherent variations (Fig.~\ref{fig:correlation.maps}a),
+however, with a clear two-part structure roughly divided by the range of the
+Transantarctic Mountains: For most regions of the East Antarctic Plateau, the
+temperature field has typical decorrelation lengths of $\sim1500$ to $2500$\,km,
+while the decorrelation lengths are significantly lower with values below
+$1000$\,km for larger parts of the West Antarctic Ice Sheet and for the
+Antarctic Peninsula. Our analysis implicitly assumes an exponential dependence
+on distance of the temperature correlation between sites
+(Eq.~\ref{eq:decor.model}). We verify this assumption by analysing the expected
+correlation as a function of distance averaged across grid cells and across a
+region of target sites (Fig.~\ref{fig:avg.decor.lengths}) in order to reduce the
+uncertainty associated with the individual correlation estimates. Here, as an
+example, we choose the EPICA Dronning Maud Land (EDML) drilling site
+($-75\degree$\,S, $0\degree$\,E) as a starting point and use all grid cells
+within a range of $\pm17.5\degree$ longitude and $\pm5\degree$ latitude as
+target sites (Dronning Maud Land (DML) region in the following). We find the
+temperature decorrelation in this region to clearly follow an exponential decay
+with a length scale of $\sim1900$\,km. Assuming ice cores with a perfect
+temperature proxy, a single core would hence be enough to capture the
+temperature variability across hundreds of kilometres.
 
 %f02
-\begin{figure}[t]%
+\begin{figure*}[t]%
 \centering
-\includegraphics[width=8.3cm]{../plots/echam5_mpiom_wiso_fig_02.png}
-\caption[Decorrelation lengths]{%
-  Temperature decorrelation lengths. Shown are the temperature decorrelation
-  lengths ($\tau$) for each model grid cell estimated by fitting an exponential
-  model to the correlation--distance relationship from correlating the local
-  $T_{2\mathrm{m}}$ time series with the temperature time series from all other
-  grid cells (Eq.~\ref{eq:decor.model}). \#NOTE: The near-coastal values might
-  be biased since the ocean grid cells are set to NA. Is this problematic?}
-\label{fig:decor.lengths}%
-\end{figure}%
+\includegraphics[width=16cm]{../plots/main/fig_02.png}
+\caption{%
+  Temperature decorrelation lengths and temperature--isotope
+  relationship. (\textbf{a}) The temperature decorrelation lengths ($\tau$, in
+  km) for each Antarctic model grid cell estimated by fitting an exponential
+  model to the correlation--distance relationship obtained from correlating the
+  local near-surface $T_{2\mathrm{m}}$ time series with the temperature time
+  series from all other grid cells (Eq.~\ref{eq:decor.model}). Note that only
+  continental grid cells are used for the fit. (\textbf{b}) The local
+  correlation between the interannual near-surface temperature
+  ($T_{2\mathrm{m}}$) and precipitation-weighted oxygen isotope composition
+  ($\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$) time series for each Antarctic model
+  grid cell.}
+\label{fig:correlation.maps}%
+\end{figure*}%
 
-This analysis implicitly assumes an exponential dependence on distance of the
-temperature correlation between sites (Eq.~\ref{eq:decor.model}). We note that
-this might be a rough approximation for single sites, but it is verified on
-average, as shown by analysing the expected correlation across all grid cells
-sampled from ring segments (Fig.~\ref{fig:avg.decor.lengths}). Here, as
-exemplarily shown for the region around the EPICA Dronning Maud Land (EDML)
-drilling site (defined as $17.5\degree$\,W to $17.5\degree$\,E and
-$70-80\degree$\,S), the decorrelation clearly follows an exponential decay with
-an average length scale of $\sim1900$\,km (Fig.~\ref{fig:avg.decor.lengths}). In
-contrast to the $T_{2\mathrm{m}}$ field, the field of $\delta^{18}\mathrm{O}$
-exhibits a much more stable correlation structure. Starting from a local value
-of $\sim0.4$, the correlations only slightly decrease with increasing distance
-for distances $\leq500$\,km, which is followed by a little steeper decrease for
-larger distances, before the correlations assume constant low levels of
-$\lesssim0.2$ for distances above $\sim1500$\,km
-(Fig.~\ref{fig:avg.decor.lengths}). The correlation structure of the
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ field, which mimicks the correlation
-between single ice-core isotope records, is very similar to
-$\delta^{18}\mathrm{O} $ but with lower overall values
-(Fig.~\ref{fig:avg.decor.lengths}).
+We now assess the extent to which actual single Antarctic ice-core isotope
+records explain local temperature variations. Here, we can distinguish between
+the unweighted interannual field of $\delta^{18}\mathrm{O}$ and the
+precipitation-weighted field of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, which
+most closely mimicks a real ice-core record. We first analyse the local
+correlation between the $T_{2\mathrm{m}}$ and
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series for each model grid cell
+(Fig.~\ref{fig:correlation.maps}b). We find the temperature--isotope correlations
+to be generally low, ranging across all analysed grid cells from virtually $0$
+up to $\sim0.53$, however, with $\sim75\,\%$ of the correlations $\leq0.4$ and a
+mean correlation of $0.36$. In the second step, we determine the average spatial
+strucure of the temperature--isotope correlation as a function of distance
+(Fig.~\ref{fig:avg.decor.lengths}), assessed for our DML region in the same
+manner as the average temperature decorrelation structure presented above. In
+contrast to the exponential temperature decorrelation, the
+$\delta^{18}\mathrm{O}$ field in the DML region exhibits a much lower but also
+more stable structure of correlation with the target site temperature. Starting
+from a local value of $\sim0.4$, the correlations decrease only slightly with
+increasing distance up to $\sim1000$\,km, followed by a little steeper decrease
+for larger distances and constant levels of $\lesssim0.2$ for distances above
+$\sim1500$\,km. Precipitation weighting, as seen from analysing the
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ field, results in overall even lower
+correlation values, but it does not affect much the correlation structure
+itself.
 
 %f03
 \begin{figure}[t]%
 \centering
-\includegraphics[width=8.3cm]{/Users/tmuench/research/awi/comb-i/echam-wiso/echam5-mpiom-wiso-past1000/out/cor-distributions/correlation_distance_1core_dml-target-region.pdf}
-\caption[Average decorrelation lengths]{%
-  Average decorrelation lengths. \#NOTE: this is a placeholder for a one-panel
-  figure showing only the line plots for t2m, d18O and d18O-pw.}
+\includegraphics[width=8.3cm]{../plots/main/fig_03.pdf}
+\caption{%
+  Spatial correlation structure in the model data for the DML region. Shown is
+  the average correlation as a function of distance between the interannual
+  near-surface temperature at a target site and the spatial fields of
+  interannual temperature ($T_{2\mathrm{m}}$, black), oxygen isotope
+  ($\delta^{18}\mathrm{O}$, green) and precipitation-weighted oxygen isotope
+  composition ($\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, blue). Averaging is
+  performed in two steps: (1) For a given target site, the correlations between
+  target site temperature and the respective fields are averaged across all grid
+  cells that fall into consecutive rings of $250$\,km radial width around the
+  target site (see Fig.~\ref{fig:concept} for a conceptual sketch of this
+  approach). (2) We average these results across all target sites that lie in
+  the DML region, i.e. $\pm17.5\degree$ longitude and $\pm5\degree$ latitude
+  around the EDML drilling site ($-75\degree$\,S, $0\degree$\,E).}
 \label{fig:avg.decor.lengths}%
 \end{figure}%
 
-\subsection{Local temperature--isotope relationship and picking optimal ice-core
-  sites}\label{results:picking}
-%\subsubsection{Local temperature--isotope correlation}
+\subsection{Picking optimal ice-core sites}
+\label{results:picking}
 
-To assess the extent to which single Antarctic ice-core isotope records explain
-local temperature variations, we analyse for each model grid cell the
-correlation between the $T_{2\mathrm{m}}$ and
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series
-(Fig.~\ref{fig:local.cor}). We find the local correlations to be generally low,
-ranging across all analysed grid cells from virtually $0$ up to $\sim0.53$,
-however, with $\sim75\,\%$ of the correlations $\leq0.4$ and a mean correlation
-of $0.36$. (\#ADD: compare with previous studies, e.g. Goursaud2018/ECHAM5-wiso
-with ERA-Interim?)
+The above analyses suggest that isotope records of single ice cores only
+capture a low portion of the local interannual temperature variability, since
+additional processes that influence the isotopic signal lower the correlation
+with the local temperature record. Interpreting these processes as noise raises
+the question of whether the correlation with temperature can be improved by
+averaging isotope records across sites. Assuming an ideal world, in which the
+temperature data of the climate model are a perfect surrogate for the true
+climate variations at each site, we can set up the simple experiment of
+investigating which spatial array of $N$ ice cores, i.e. oxygen isotope records,
+would optimise the temperature correlation with a target site by
+random picking and averaging of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ grid
+cells.
+
+For the EDML drilling site as a target, we obtain the interesting result that
+the optimal site for a single core is not the local grid cell, as one might
+expect, but a site $\sim960$\,km away from the target towards the southeast
+(Fig.~\ref{fig:picking}a). Choosing this site increases the correlation with the
+target temperature from the local value of $0.26$ to a value of
+$0.43$. Optimising the set of three and five cores
+(Fig.~\ref{fig:picking}b--c) yields in both cases sites that scatter at
+significant distances around the target, but with only slightly higher
+correlations than for $N=1$ ($0.46$ for $N=3$ and $0.47$ for $N=5$). We obtain
+similar results for choosing the drilling site of the Vostok ice core
+($-78.47\degree$\,S, $106.83\degree$\,E) as a target
+(Fig.~\ref{fig:picking}d--f). The optimal single core (correlation of $0.45$
+compared to the local correlation of $0.34$) would be at a site $\sim300$\,km
+north of Vostok. As for EDML, the optimal sites for three and five cores all lie
+around the target without including it, but here the optimal three cores
+(correlation of $0.56$) yield a significant increase in correlation compared to
+the optimal single core, while the optimal five cores also show no further
+increase (correlation $0.57$).
 
 %f04
-\begin{figure}[t]%
+\begin{figure*}[t]%
 \centering
-\includegraphics[width=8.3cm]{../plots/echam5_mpiom_wiso_fig_03.png}
-\caption[Average decorrelation lengths]{%
-  The local correlation for each model grid cell between modelled interannual
-  near-surface temperature ($T_{2\mathrm{m}}$) and precipitation-weighted oxygen
-  isotopic composition ($\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$).}
-\label{fig:local.cor}%
-\end{figure}%
+\includegraphics[width=16cm]{../plots/main/fig_04.pdf}
+\caption[Picking optimal sites]{%
+  Picking ice core sites that optimally reconstruct interannual temperatures at
+  EDML and Vostok. The maps show the correlation in the model data between the
+  interannual temperature time series at the target sites (black crosses) EDML
+  (\textbf{a}--\textbf{c}) and Vostok (\textbf{d}--\textbf{f}) with the fields
+  of precipitation-weighted oxygen isotope composition. Filled black circles
+  denote those grid cells that maximise the correlation with the target site
+  temperature for choosing either a single grid cell ($N=1$; \textbf{a},
+  \textbf{d}) or for averaging across $N=3$ (\textbf{b}, \textbf{e}) or $N=5$
+  (\textbf{c}, \textbf{f}) grid cells.}
+\label{fig:picking}%
+\end{figure*}%
 
-This analysis suggests that isotope records of single ice cores only
-capture a low portion of the local interannual temperature variability, which
-raises the question of whether the correlation with the local temperature record
-can be  improved by averaging across sites. Using the climate model data, we can
-make the experiment of investigating which spatial array of ice cores would
-optimise the temperature correlation by randomly picking a given number of model
-grid cells and averaging their $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time
-series. This experiment basically assumes an ideal world where the temperature
-data of the climate model is a perfect surrogate for the true climate
-variations at each site.
-
-Choosing the EDML drilling site ($75\degree$\,S, $0\degree$\,E) as a target
-site, we obtain the interesting result that for picking a single core, the
-optimal site is not given by the local grid cell but by a site xxx\,km (\#EDIT)
-away (Fig.~\ref{fig:picking}). Picking this site increases the correlation with the target
-temperature from the local value of $0.26$ to a value of $0.43$, while
-increasing the number of picked sites yields only a slightly higher correlation
-(Fig.~\ref{fig:picking}). Similar results are found for...
+We generalise these findings by investigating how often the optimal correlation
+with the target site is, for a single core, obtained from a non-local grid cell,
+using all Antarctic model grid cells as target sites
+(Fig.~\ref{fig:picking.hist}). Indeed, there are target sites for which the
+correlation is maximised when picking the local grid cell, however, the majority
+($\sim65$\,\%) of optimal sites lie at distances from the respective target site
+of between $400$--$600$ and $800$--$1000$\,km.
 
 %f05
 \begin{figure}[t]%
 \centering
-\includegraphics[width=8.3cm]{/Users/tmuench/Documents/presentations/egu_2019/src/core-picking_edml_N=1.png}
-\caption[Optimal site picking]{%
-  Picking optimal ice core sites to reconstruct the temperature at EDML. \#EDIT:
-  This is rather a placeholder for a larger figure showing picking results for
-  various $N$ (how many? another target site?).}
-\label{fig:picking}%
+\includegraphics[width=6.5cm]{../plots/main/fig_05.pdf}
+\caption{%
+  The distribution of distances between Antarctic target sites and the
+  respective optimal ice-core location. The optimal location is defined as that
+  grid cell of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series that
+  maximises the correlation with the target site temperature time series.}
+\label{fig:picking.hist}%
 \end{figure}%
-
-\#QUESTION: How many picking trials to show? N=1,3,5? Show only EDML or also
-another site?
-\#IDEA: Maybe we can generalise the result of ``distant 1 core picking is
-optimal'' by analysing many target sites and recording the distance of the
-optimal pick from the target site, then showing it as a histogram.
 
 \subsection{Optimal core spacing depending on number of records averaged}
 \label{results:optim-spacing}
 
 
 
+\section{Discussion}\label{discussion}
 
-
-
+(\#ADD: compare local t2m-oxy.pw correlation with previous studies,
+e.g. Goursaud2018/ECHAM5-wiso with ERA-Interim?)
 
 
 
