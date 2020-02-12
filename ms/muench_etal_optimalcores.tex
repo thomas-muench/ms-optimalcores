@@ -259,19 +259,25 @@ $n=5000$ for $N=1$ and to $n=10^5$ for $N\geq3$.
 
 The optimal sites determined from the picking approach described above will
 strongly depend on the used model simulation and the analysed time span. To
-overcome this issue, we generalise the approach by sampling $N$ sites from the
+overcome this issue, we generalise the approach by sampling $N$ sites from
 ring regions around the target site (Fig.~\ref{fig:concept}).  This is
 implemented as a two-step process: (1) we determine all possible combinations of
 selecting $N$ rings with replacement, and then, (2), identify for each ring
 combination the possibilities of combining single grid cells from each of the
-rings. For this second part, it is analytically feasible to identify all
-possible grid-cell combinations until $N=2$; for $N\geq3$, we resort to Monte
-Carlo sampling, for which we use a maximum number of Monte Carlo trials of
-$n=1000$ (\#EDIT:check/update this number). Finally, for a specific ring
-combination, we average the $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series
-for each grid-cell combination and compute the correlation with the target site
-temperature. We then report the expected correlation for this ring combination
-by averaging across all correlations of the analysed grid-cell combinations.
+rings. For each of these grid-cell combinations, we average the
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series and compute the correlation
+of this spatial average with the target site temperature. Finally, we report the
+expected correlation for every ring combination by averaging across all
+correlations of the analysed grid-cell combinations.
+
+To identify all possible grid-cell combinations in the second step above is
+analytically feasible until $N=2$; for $N\geq3$, we resort to Monte Carlo
+sampling instead. For this, we estimate an optimal number of Monte Carlo
+iterations from comparing the Monte Carlo sampling solution with the exact
+solution for $N=2$ rings. We find the correlation mismatch (root mean
+square deviation) to be $\sim10^{-3}$ for $10^4$ iterations. Since a higher
+number of ring combinations than $N=2$ involves many more possible grid-cell
+combinations, we choose $10^5$ iterations for sampling $N\geq3$ rings.
 
 \section{Results}\label{results}
 
