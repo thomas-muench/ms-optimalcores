@@ -57,6 +57,8 @@ presented method can be direcly extended to other palaeoclimate reconstruction
 problems.
 \end{abstract}
 
+% \copyrightstatement{TEXT}
+
 \introduction
 
 The oxygen and hydrogen isotopic composition of firn and ice recovered from
@@ -537,38 +539,157 @@ results also for the two previous figures.
 (\#ADD: compare local t2m-oxy.pw correlation with previous studies,
 e.g. Goursaud2018/ECHAM5-wiso with ERA-Interim?)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%\copyrightstatement{}
-
 % \codedataavailability{TEXT} %% use this section when having data sets and software code available
 
-% \appendix
-% \section{}    %% Appendix A
-% \subsection{}     %% Appendix A1, A2, etc.
+\appendix
 
-% \noappendix       %% use this to mark the end of the appendix section
+\section{Conceptual model of correlation structures}
+\label{app:concept.model}
+
+\subsection{General model}
+\label{app:concept.model.general}
+
+We set up a conceptual model for the correlation between a target temperature
+time series and the spatial average of a climatic field, specifically for the
+variables temperature and precipitation-weighted temperature. Our model builds
+upon assuming simple isotropic and exponential decorrelation structures for the
+involved climatic fields and on previous work which suggests that precipitation
+intermittency partially converts the input time series into white noise.
+
+For the model, we consider a temperature time series $T_0$ at some target site
+$\mathbf{R}_0$ and a field $x$ of a given climate variable. Form this field, we
+select $N$ time series $x_i$ at the sites $\mathbf{R}_i$, $i=1,\dotsc,N$, and
+denote the spatial average of these time series by
+$\overline{x}=\frac{1}{N}\sum_{i=1}^{N}{x_i}$. The distances of the $N$ sites
+from the target site and the distances between these sites are given by
+$r_i=|\mathbf{R}_i-\mathbf{R}_0|$ and by $d_{ij}=|{\mathbf{R}_i-\mathbf{R}_j}|$,
+respectively. The correlation between $T_0$ and $\overline{x}$ follows from
+%
+\begin{equation}
+\label{eq:corr.general}
+\mathrm{cor}(T_0,\overline{x})=\frac
+{\mathrm{cov}(T_0,\overline{x})}
+{\sqrt{\mathrm{var}(T_0)\mathrm{var}(\overline{x})}},
+\end{equation}
+and it is essentially governed by the spatial covariance between temperature and
+the climate field $x$,
+%
+\begin{equation}
+\label{eq:cov.general}
+\mathrm{cov}(T_0,\overline{x})=
+\frac{1}{N}\sum_{i}^{N}{\mathrm{cov}(T_0,x_i)},
+\end{equation}
+%
+and by the variance of the spatial average of the field,
+\begin{equation}
+\label{eq:var.general}
+\mathrm{var}(\overline{x})=
+\frac{1}{N^2}\left(
+\sum_{i}^{N}{\mathrm{var}(x_i)} +
+2\sum_{i}^{N-1}\sum_{j}^{N}{\mathrm{cov}(x_i,x_j)}
+\right).
+\end{equation}
+%
+In our model, as we will show in the following, these quantities depend on the
+distances between the sites and on the type of the field $x$.
+
+\subsection{Temperature}
+\label{app:concept.model.t2m}
+
+For the near-surface temperature field, $x \equiv T$, we assume a spatially
+constant variance, $\mathrm{var}(T_0)=\mathrm{var}(T_i)\equiv\sigma_T^2$, and an
+isotropic decorrelation following an exponential law with a decorrelation length
+$\tau$; i.e. the covariance between sites is given by
+%
+\begin{align}
+\label{eq:t2m.decorr}
+\mathrm{cov}(T_0,T_i)&=\sigma_T^2\exp{\left(-\frac{r_i}{\tau}\right)},\\
+\mathrm{cov}(T_i,T_j)&=\sigma_T^2\exp{\left(-\frac{d_{ij}}{\tau}\right)}.
+\end{align}
+%
+For the correlation between the target site temperature and the spatial average
+of $N$ temperature time series then immediately follows
+%
+\begin{equation}
+\label{eq:t2m.corr}
+\mathrm{cor}(T_0,\overline{T})=
+\frac{\sum_{i=1}^{N}\exp{\left(-\frac{r_i}{\tau}\right)}}
+{\sqrt{N+2\sum_{i=1}^{N-1}
+\sum_{j=i+1}^{N}{\exp{\left(-\frac{d_{ij}}{\tau}\right)}}}}.
+\end{equation}
+
+\subsection{Precipitation-weighted temperature}
+\label{app:concept.model.t2m.pw}
+
+To model the effect of precipitation intermittency, we follow LAEPPLE et al and
+assume that precipitation intermittency redistributes the energy of the
+temperature time series constantly across frequencies, i.e. creating temporal
+white noise without changing the total variance. Then, the
+precipitation-weighted temperature time series at site $\mathbf{R}_i$ arises
+from $T_i$ as
+%
+\begin{equation}
+\label{eq:precip.weighting}
+T_i^{\mathrm{(pw)}}=
+\left(1-\xi\right)^{1/2}T_i + \xi^{1/2} \sigma_T \varepsilon_i(0,1),
+\end{equation}
+%
+where $\varepsilon_i(0,1)$ are independent normally distributed random variables
+with zero mean and standard deviation $1$, and the parameter $0\leq\xi\leq1$
+determines the fraction of the input temperature time series which is turned
+into white noise.
+
+The covariance between the target site temperature and a precipitation-weighted
+temperature time series is then simply
+\begin{equation}
+\label{eq:t2m.pw.decorr}
+\mathrm{cov}(T_0,T_i^{\mathrm{(pw)}})=
+(1-\xi)^{1/2}\sigma_T^2\exp{\left(-\frac{r_i}{\tau}\right)},
+\end{equation}
+%
+which implies firstly that the spatial correlation structure between $T_0$ and
+the precipitation-weighted temperature follows the same exponential law as
+Eq.~\eqref{eq:t2m.decorr}, only scaled by the factor $(1-\xi)^{1/2}$. Secondly,
+the factor $\xi$ can be estimated from the climate model data by analysing the
+local correlation, i.e. at the same grid cell, between temperature and
+precipitation-weighted temperature.
+
+We further assume that the effect of precipitation intermittency is not
+independent between sites but is related to the spatial coherence of the
+precipitation fields, for which we assume an exponential decorrelation structure
+with a decay length $\tau_{\mathrm{pw}}$. Following these assumptions, the
+spatial covariance between sites of the white noise terms induced by the effect
+of precipitation intermitteny has the form
+%
+\begin{equation}
+\label{eq:noise.cov}
+\mathrm{cov}(\varepsilon_i,\varepsilon_j)=
+\exp{\left(-\frac{d_{ij}}{\tau_{\mathrm{pw}}}\right)}.
+\end{equation}
+%
+Then, the correlation between the target site temperature and the spatial
+average of $N$ precipitation-weighted temperature time series is governed by the
+intermittency factor $\xi$ and by the two different spatial length scales $\tau$
+and $\tau_{\mathrm{pw}}$,
+%
+\begin{equation}
+\label{eq:t2m.corr}
+\mathrm{cor}\left(T_0,\overline{T}^{\mathrm{(pw)}}\right)=
+\frac
+{\sqrt{1-\xi}\sum_{i=1}^{N}\exp{\left(-\frac{r_i}{\tau}\right)}}
+{\sqrt{N + 2\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}
+  g(d_{ij}; \tau, \tau_{\mathrm{pw}}, \xi)}},
+\end{equation}
+%
+with
+\begin{equation}
+\label{eq:exp.fun}
+g(z; \tau, \tau_{\mathrm{pw}}, \xi):=
+(1-\xi)\exp{\left(-\frac{z}{\tau}\right)} +
+\xi\exp{\left(-\frac{z}{\tau_{\mathrm{pw}}}\right)}.
+\end{equation}
+
+\noappendix
 
 % \authorcontribution{TEXT} %% this section is mandatory
 % \competinginterests{TEXT} %% this section is mandatory even if you declare that no competing interests are present
