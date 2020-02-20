@@ -189,7 +189,7 @@ the following).
 
 \subsection{Data analyses}\label{methods:main}
 
-\subsubsection{General approach}
+\subsubsection{General approach}\label{methods:general}
 
 We investigate the relationship between the various model variables by assessing
 the Pearson correlation coefficient. To link model data to ice cores, we mimic
@@ -219,31 +219,31 @@ rings.
 \label{fig:concept}%
 \end{figure}%
 
-\subsubsection{Estimation of decorrelation lengths and spatial correlation
-  structures}\label{methods:decor.model}
+% \subsubsection{Estimation of decorrelation lengths and spatial correlation
+%   structures}\label{methods:decor.model}
 
-We estimate spatial temperature decorrelation lengths by fitting an isotropic
-exponential model to the correlation--distance dependence of the form
-\begin{equation}\label{eq:decor.model}
-c(r) = \exp{\left(-\frac{r}{\tau}\right)},
-\end{equation}
-where $c(r)$ is the fitted correlation at some distance $r$ from the target, and
-$\tau$ is the estimated decorrelation length at which the correlation has
-declined to $1/e$ ($\sim37\,\%$). The input relationship between correlation and
-distance is obtained in two different ways: (1) For a single target site, we
-correlate the $T_{2\mathrm{m}}$ time series at the target site with the
-$T_{2\mathrm{m}}$ time series of every other grid cell on the Antarctic
-continent and record the respective distances between the sites. (2) To reduce
-the uncertainty of these individual correlation estimates, we average across the
-correlations obtained between the $T_{2\mathrm{m}}$ time series at a target site
-and the $T_{2\mathrm{m}}$ time series of grid cells sampled from rings
-(Fig.~\ref{fig:concept}). In a second averaging step, we compute the mean of the
-so obtained correlation--distance relationships for several target sites from a
-given Antarctic region and use that as input to Eq.~\eqref{eq:decor.model}.
+% We estimate spatial temperature decorrelation lengths by fitting an isotropic
+% exponential model to the correlation--distance dependence of the form
+% \begin{equation}\label{eq:decor.model}
+% c(r) = \exp{\left(-\frac{r}{\tau}\right)},
+% \end{equation}
+% where $c(r)$ is the fitted correlation at some distance $r$ from the target, and
+% $\tau$ is the estimated decorrelation length at which the correlation has
+% declined to $1/e$ ($\sim37\,\%$). The input relationship between correlation and
+% distance is obtained in two different ways: (1) For a single target site, we
+% correlate the $T_{2\mathrm{m}}$ time series at the target site with the
+% $T_{2\mathrm{m}}$ time series of every other grid cell on the Antarctic
+% continent and record the respective distances between the sites. (2) To reduce
+% the uncertainty of these individual correlation estimates, we average across the
+% correlations obtained between the $T_{2\mathrm{m}}$ time series at a target site
+% and the $T_{2\mathrm{m}}$ time series of grid cells sampled from rings
+% (Fig.~\ref{fig:concept}). In a second averaging step, we compute the mean of the
+% so obtained correlation--distance relationships for several target sites from a
+% given Antarctic region and use that as input to Eq.~\eqref{eq:decor.model}.
 
-The spatial correlation structure between the target site temperature and other
-model variables is assessed in the same manner as for the average temperature
-decorrelation.
+% The spatial correlation structure between the target site temperature and other
+% model variables is assessed in the same manner as for the average temperature
+% decorrelation.
 
 \subsubsection{Picking optimal sites}\label{methods:picking}
 
@@ -256,29 +256,32 @@ for each $N$ is then determined from the maximum correlation across all picking
 trials. To ensure stable results, we set the maximum number of trials to
 $n=5000$ for $N=1$ and to $n=10^5$ for $N\geq3$.
 
-\subsubsection{Optimal ice-core spacing}\label{methods:general}
+\subsubsection{Optimal sampling length scales}\label{methods:opt.sampling}
 
 The optimal sites determined from the picking approach described above will
-strongly depend on the used model simulation. To overcome this issue, we
-generalise the approach by sampling $N$ sites from ring regions around the
-target site (Fig.~\ref{fig:concept}).  This is implemented as a two-step
-process: (1) we determine all possible combinations of selecting $N$ rings with
-replacement, and then, (2), identify for each ring combination the possibilities
-of combining single grid cells from each of the rings. For each of these
-grid-cell combinations, we average the $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$
-time series and compute the correlation of this spatial average with the target
+strongly depend on the used model simulation and do not offer insights into the
+governing spatial scales. To overcome these issues, we generalise the approach
+by using all climate model variables and by sampling $N$ sites from the defined
+rings around a given target site (Fig.~\ref{fig:concept}). This is implemented
+as a two-step process: (1) we determine all possible combinations of selecting
+$N$ rings with replacement, and then, (2), identify for each ring combination
+the possibilities of combining a single grid cell from each of the rings. For
+each of these grid-cell combinations, we average the time series of the studied
+variable and compute the correlation of this spatial average with the target
 site temperature. Finally, we report the expected correlation for every ring
 combination by averaging across all correlations of the analysed grid-cell
-combinations.
+combinations. This gives insights into the average spatial correlation structure
+depending on the number of averaged sites and the sampling length scale between
+these sites.
 
 To identify all possible grid-cell combinations in the second step above is
 computationally feasible until $N=2$; for $N\geq3$, we resort to Monte Carlo
-sampling instead. For this, we estimate an optimal number of Monte Carlo
+sampling instead. For this, we estimate a sufficient number of Monte Carlo
 iterations from comparing the Monte Carlo sampling solution with the exact
-solution for $N=2$ rings. We find the correlation mismatch (root mean
-square deviation) to be $\sim10^{-3}$ for $10^4$ iterations. Since a higher
-number of ring combinations than $N=2$ involves many more possible grid-cell
-combinations, we choose $10^5$ iterations for sampling $N\geq3$ rings.
+solution for $N=2$. We find the correlation mismatch (root mean square
+deviation) to be $\sim10^{-3}$ for $10^4$ iterations. Since a higher number of
+possible ring combinations than available for $N=2$ involves many more possible
+grid-cell combinations, we choose $10^5$ iterations for sampling $N\geq3$ sites.
 
 \subsection{Selected study regions}\label{methods:regions}
 
@@ -335,7 +338,7 @@ temperature variability across hundreds of kilometres.
   km) for each Antarctic model grid cell estimated by fitting an exponential
   model to the correlation--distance relationship obtained from correlating the
   local near-surface $T_{2\mathrm{m}}$ time series with the temperature time
-  series from all other grid cells (Eq.~\ref{eq:decor.model}). Note that only
+  series from all other grid cells (cf. Eq.~\ref{eq:t2m.decorr}). Note that only
   continental grid cells are used for the fit. (\textbf{b}) The local
   correlation between the interannual near-surface temperature
   ($T_{2\mathrm{m}}$) and precipitation-weighted oxygen isotope composition
