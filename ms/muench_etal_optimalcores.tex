@@ -200,11 +200,12 @@ isotopic record since here we are interested in the upper limit of the extent to
 which ice cores can reconstruct the climatic temperature signal. In order to
 learn about the typical spatial scales that govern the temperature--isotope
 relationship, we set up the following general scheme: For a given model grid
-cell $r_0$ of interest (target site in the following), we define consecutive
-rings around this site of $250$\,km radial width until a maximum distance of
-$2000$\,km (Fig.~\ref{fig:concept}). Then, we determine all grid cells that fall
-into each of these rings and either sample these grid cells directly or sample
-from the possibilities of combining model grid cells and rings.
+cell $\mathbf{R}_0$ of interest (target site in the following), we define
+consecutive rings around this site of $250$\,km radial width until a maximum
+distance of $2000$\,km (Fig.~\ref{fig:concept}). Then, we determine all grid
+cells that fall into each of these rings and either sample these grid cells
+directly or sample from the possibilities of combining model grid cells and
+rings.
 
 %f01
 \begin{figure}[t]%
@@ -258,20 +259,20 @@ $n=5000$ for $N=1$ and to $n=10^5$ for $N\geq3$.
 \subsubsection{Optimal ice-core spacing}\label{methods:general}
 
 The optimal sites determined from the picking approach described above will
-strongly depend on the used model simulation and the analysed time span. To
-overcome this issue, we generalise the approach by sampling $N$ sites from
-ring regions around the target site (Fig.~\ref{fig:concept}).  This is
-implemented as a two-step process: (1) we determine all possible combinations of
-selecting $N$ rings with replacement, and then, (2), identify for each ring
-combination the possibilities of combining single grid cells from each of the
-rings. For each of these grid-cell combinations, we average the
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series and compute the correlation
-of this spatial average with the target site temperature. Finally, we report the
-expected correlation for every ring combination by averaging across all
-correlations of the analysed grid-cell combinations.
+strongly depend on the used model simulation. To overcome this issue, we
+generalise the approach by sampling $N$ sites from ring regions around the
+target site (Fig.~\ref{fig:concept}).  This is implemented as a two-step
+process: (1) we determine all possible combinations of selecting $N$ rings with
+replacement, and then, (2), identify for each ring combination the possibilities
+of combining single grid cells from each of the rings. For each of these
+grid-cell combinations, we average the $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$
+time series and compute the correlation of this spatial average with the target
+site temperature. Finally, we report the expected correlation for every ring
+combination by averaging across all correlations of the analysed grid-cell
+combinations.
 
 To identify all possible grid-cell combinations in the second step above is
-analytically feasible until $N=2$; for $N\geq3$, we resort to Monte Carlo
+computationally feasible until $N=2$; for $N\geq3$, we resort to Monte Carlo
 sampling instead. For this, we estimate an optimal number of Monte Carlo
 iterations from comparing the Monte Carlo sampling solution with the exact
 solution for $N=2$ rings. We find the correlation mismatch (root mean
@@ -293,16 +294,14 @@ Transantarctic Mountains: For most regions of the East Antarctic Plateau, the
 temperature field has typical decorrelation lengths of $\sim1500$ to $2500$\,km,
 while the decorrelation lengths are significantly lower with values below
 $1000$\,km for larger parts of the West Antarctic Ice Sheet and for the
-Antarctic Peninsula. Our analysis implicitly assumes an exponential dependence
-on distance of the temperature correlation between sites
-(Eq.~\ref{eq:decor.model}). We verify this assumption by analysing the expected
+Antarctic Peninsula. In order to reduce the uncertainty associated with the
+individual correlation estimates from single grid cells we analyse the expected
 correlation as a function of distance averaged across grid cells and across a
-region of target sites (Fig.~\ref{fig:avg.decor.lengths}) in order to reduce the
-uncertainty associated with the individual correlation estimates. Here, as an
-example, we choose the EPICA Dronning Maud Land (EDML) drilling site
-($-75\degree$\,S, $0\degree$\,E) as a starting point and use all grid cells
-within a range of $\pm17.5\degree$ longitude and $\pm5\degree$ latitude as
-target sites (Dronning Maud Land (DML) region in the following). We find the
+region of target sites (Fig.~\ref{fig:avg.decor.lengths}). Here, as an example
+for an existent ice-core drilling region, we choose as target sites all grid
+cells within a range of $\pm17.5\degree$ longitude and $\pm5\degree$ from the
+EPICA Dronning Maud Land (EDML) site ($-75\degree$\,S, $0\degree$\,E), referred
+to as the Dronning Maud Land (DML) region in the following. We find the
 temperature decorrelation in this region to clearly follow an exponential decay
 with a length scale of $\sim1900$\,km. Assuming ice cores with a perfect
 temperature proxy, a single core would hence be enough to capture the
@@ -328,26 +327,26 @@ temperature variability across hundreds of kilometres.
 \end{figure*}%
 
 We now assess the extent to which actual single Antarctic ice-core isotope
-records explain local temperature variations. Here, we can distinguish between
-the unweighted interannual field of $\delta^{18}\mathrm{O}$ and the
-precipitation-weighted field of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, which
-most closely mimicks a real ice-core record. We first analyse the local
-correlation between the $T_{2\mathrm{m}}$ and
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series for each model grid cell
-(Fig.~\ref{fig:correlation.maps}b). We find the temperature--isotope correlations
-to be generally low, ranging across all analysed grid cells from virtually $0$
-up to $\sim0.53$, however, with $\sim75\,\%$ of the correlations $\leq0.4$ and a
-mean correlation of $0.36$. In the second step, we determine the average spatial
+records~--~as simulated by the climate model~-- explain local temperature
+variations. Here, we can distinguish between the unweighted interannual field of
+$\delta^{18}\mathrm{O}$ and the precipitation-weighted field of
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, which most closely mimicks a real
+ice-core record. We first analyse the local correlation between the
+$T_{2\mathrm{m}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series for
+each model grid cell (Fig.~\ref{fig:correlation.maps}b), which we find to be
+generally low, ranging across all analysed grid cells from $<0.1$ up to
+$\sim0.53$ with $\sim75\,\%$ of the correlations $\leq0.4$ and a mean
+correlation of $0.36$. In the second step, we determine the average spatial
 strucure of the temperature--isotope correlation as a function of distance
-(Fig.~\ref{fig:avg.decor.lengths}), assessed for our DML region in the same
+(Fig.~\ref{fig:avg.decor.lengths}), assessed for the DML region in the same
 manner as the average temperature decorrelation structure presented above. In
 contrast to the exponential temperature decorrelation, the
 $\delta^{18}\mathrm{O}$ field in the DML region exhibits a much lower but also
 more stable structure of correlation with the target site temperature. Starting
 from a local value of $\sim0.4$, the correlations decrease only slightly with
-increasing distance up to $\sim1000$\,km, followed by a little steeper decrease
+increasing distance up to $\sim1300$\,km, followed by a little steeper decrease
 for larger distances and constant levels of $\lesssim0.2$ for distances above
-$\sim1500$\,km. Precipitation weighting, as seen from analysing the
+$\sim1700$\,km. Precipitation weighting, as seen from analysing the
 $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ field, results in overall even lower
 correlation values, but it does not affect much the correlation structure
 itself.
@@ -378,35 +377,34 @@ itself.
 
 The above analyses suggest that isotope records of single ice cores only
 capture a low portion of the local interannual temperature variability, since
-additional processes that influence the isotopic signal lower the correlation
+additional processes influence the isotopic signal and lower the correlation
 with the local temperature record. Interpreting these processes as noise raises
 the question of whether the correlation with temperature can be improved by
 averaging isotope records across sites. Assuming an ideal world, in which the
-temperature data of the climate model are a perfect surrogate for the true
-climate variations at each site, we can set up the simple experiment of
-investigating which spatial array of $N$ ice cores, i.e. oxygen isotope records,
-would optimise the temperature correlation with a target site by
-random picking and averaging of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ grid
-cells.
+the climate model data are a perfect surrogate for the true climate and proxy
+variations at each site, we can set up the simple experiment of investigating
+which spatial array of $N$ ice cores, i.e. oxygen isotope records, would
+optimise the temperature correlation with a target site by random picking and
+averaging of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ grid cells.
 
-For the EDML drilling site as a target, we obtain the interesting result that
-the optimal site for a single core is not the local grid cell, as one might
-expect, but a site $\sim960$\,km away from the target towards the southeast
-(Fig.~\ref{fig:picking}a). Choosing this site increases the correlation with the
-target temperature from the local value of $0.26$ to a value of
-$0.43$. Optimising the set of three and five cores
-(Fig.~\ref{fig:picking}b--c) yields in both cases sites that scatter at
+For our specific model simulation and the EDML drilling site as a target, we
+obtain the interesting result that the optimal site for a single core is not the
+local grid cell -- as one might expect -- but a site $\sim960$\,km away from the
+target towards the southeast (Fig.~\ref{fig:picking}a). Choosing this site
+increases the correlation with the target temperature from the local value of
+$0.26$ to a value of $0.43$. Optimising the set of three and five cores
+(Fig.~\ref{fig:picking}b--c) yields sites that in both cases scatter at
 significant distances around the target, but with only slightly higher
 correlations than for $N=1$ ($0.46$ for $N=3$ and $0.47$ for $N=5$). We obtain
 similar results for choosing the drilling site of the Vostok ice core
 ($-78.47\degree$\,S, $106.83\degree$\,E) as a target
 (Fig.~\ref{fig:picking}d--f). The optimal single core (correlation of $0.45$
-compared to the local correlation of $0.34$) would be at a site $\sim300$\,km
-north of Vostok. As for EDML, the optimal sites for three and five cores all lie
-around the target without including it, but here the optimal three cores
-(correlation of $0.56$) yield a significant increase in correlation compared to
-the optimal single core, while the optimal five cores also show no further
-increase (correlation $0.57$).
+compared to the local correlation of $0.34$) in this simulation would be at a
+site $\sim300$\,km north of Vostok. As for EDML, the optimal sites for three and
+five cores all lie around the target without including it, but here the optimal
+three cores (correlation of $0.56$) yield a significant increase in correlation
+compared to the optimal single core, while the optimal five cores also show no
+further increase (correlation $0.57$).
 
 %f04
 \begin{figure*}[t]%
@@ -425,9 +423,9 @@ increase (correlation $0.57$).
 \label{fig:picking}%
 \end{figure*}%
 
-We generalise these findings by investigating how often the optimal correlation
-with the target site is, for a single core, obtained from a non-local grid cell,
-using all Antarctic model grid cells as target sites. Indeed, the majority
+We generalise these findings by investigating for all Antarctic model grid cells
+as target sites how often the optimal correlation of a single core with the
+target site is obtained with a non-local grid cell. Indeed, the majority
 ($\sim65$\,\%) of optimal sites lie at distances from the respective target site
 of between $400$--$600$ and $800$--$1000$\,km.
 
@@ -448,21 +446,21 @@ of between $400$--$600$ and $800$--$1000$\,km.
 
 The approach of picking optimal ice-core sites yields straightforward results,
 but it also has several shortcomings. Firstly, the results will likely depend on
-the used model simulation and the analysed time span and are therefore difficult
-to generalise. Secondly, the variability between results for different target
-sites and for averaging $N\ge2$ cores complicates the inference of typical
-spatial scales that govern the correlation structures. As a next step, we thus
-adapt our approach in order to overcome these issues and to learn in general
-about the optimal arrangement of ice cores which maximises the correlation with
-temperature. For this, we average across grid cells to reduce local variability
-in the model data and performe this averaging step across concentric rings
-around a target site (Fig.~\ref{fig:concept} and Sect.~\ref{methods:general}) in
-order to avoid a preferred direction.
+the used model simulation and are therefore difficult to generalise. Secondly,
+the variability between results for different target sites and for averaging
+$N\ge2$ cores complicates the inference of typical spatial scales that govern
+the correlation structures. As a next step, we thus adapt our approach in order
+to overcome these issues and to learn in general about the optimal arrangement
+of ice cores which maximises the correlation with temperature. For this, we
+average the correlation results across grid cells to reduce local variability in
+the model data and perform this averaging step across combinations of
+concentric rings around a target site (Fig.~\ref{fig:concept} and
+Sect.~\ref{methods:general}) in order to avoid preferring a direction.
 
-For a single core, the expected correlation with the target site temperature in
-the DML region is readily obtained from Fig.~(\ref{fig:avg.decor.lengths}). For
-the $T_{\mathrm{2m}}$ field itself, we find the maximum correlation with the
-target site for sampling from the innermost ring, as expected. However, for
+For a single core sampled from the $T_{\mathrm{2m}}$ field itself, we have
+already seen that the maximum expected correlation with the target site
+temperature in the DML region is obtained for sampling from the innermost ring,
+as expected (Fig.~\ref{fig:avg.decor.lengths}). However, for
 $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ (and $\delta^{18}\mathrm{O}$) the decay
 with distance of the expected correlation is much weaker, and, while the highest
 correlation is also found for the innermost ring, nearly equally high
@@ -471,47 +469,63 @@ correlations are obtained for rings till a distance of $\lesssim1000$\,km.
 %f05
 \begin{figure*}[t]%
 \centering
-\includegraphics[width=16cm]{../plots/main/echam5_mpiom_wiso_two_core_correlation.png}
+\includegraphics[width=17cm]{../plots/main/fig_05.png}
 \caption{%
   The expected correlation with the target site temperature in the DML region as
   a function of distance for averaging two cores. Shown is the mean correlation
-  across all possible single correlations from averaging two $T_{\mathrm{2m}}$
-  (\textbf{a}), $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ (\textbf{b}) and
-  $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ (\textbf{c}) time series of grid cells
-  sampled from the same or from two different ring bins. The axes display the
-  distance from the target of the inner radius of the sampled ring bin, where
-  the $x$ ($y$) axis stands for the first (second) sampled ring. \#ADD labels to
-  the figure: (a) is left, (b) middle, (c) right.}
+  across all possible single correlations from averaging two grid cells of
+  (\textbf{a}) $T_{\mathrm{2m}}$, (\textbf{b}) $T_{\mathrm{2m}}^{\mathrm{(pw)}}$
+  and (\textbf{c}) $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series sampled
+  from the same or from two different ring bins, averaged over all target sites
+  in the DML region. The axes display the distance from the target, where the
+  $x$ ($y$) axis stands for the first (second) sampled ring bin and tickmarks
+  indicate the radius of the midpoints of the ring bins.}
 \label{fig:two-core-correlation}%
 \end{figure*}%
 
-The difference between the fields of $T_{\mathrm{2m}}$ and
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ is even more pronounced when averaging
-two cores. As one would expect, the maximum expected correlation for
-$T_{\mathrm{2m}}$ is still found when sampling only from the innermost ring
-(Fig.~\ref{fig:two-core-correlation}a). However, for
+The difference in correlation structure between the fields of $T_{\mathrm{2m}}$
+and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ is even more pronounced when
+averaging two cores. As one would expect, the maximum expected correlation for
+$T_{\mathrm{2m}}$ is still found when sampling both cores from the innermost
+ring (Fig.~\ref{fig:two-core-correlation}a). However, for
 $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ the optimal arrangement of two cores is
 obtained for sampling one core from the innermost ring but the second one from
-the fourth or fifth ring, i.e. between $\sim800$ and $1200$\,km away from the
-target (Fig.~\ref{fig:two-core-correlation}c). Part of this structure is related
-to the effect of precipitation weighting, as can be seen from the correlation
+the fifth ring, i.e. between $\sim1000$ and $1250$\,km from the target site
+(Fig.~\ref{fig:two-core-correlation}c). Part of this structure is related to the
+effect of precipitation intermittency, which can be seen from the correlation
 structure for sampling the $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ field
-(Fig.~\ref{fig:two-core-correlation}b). Here, the correlation is nearly as high
-when the cores are sampled from the innermost and from one ring further away as
-for sampling only from the innermost ring, which is not the case for the
-$T_{\mathrm{2m}}$ field.
+(Fig.~\ref{fig:two-core-correlation}b). Here, in contrast to $T_{\mathrm{2m}}$,
+the correlation is about as high when we combine the innermost ring and one ring
+further away, as when we sample both cores from the innermost ring.
 
-We obtain similar results for averaging $N=3$ and $N=5$
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ cores to reconstruct the EDML target
-site temperature (Fig.~\ref{fig:binning}). Intriguingly, the optimal cores are
-always arranged such that one core is placed in the innermost ring while the
-others are distributed at distances between $\sim500$ and $1500$\,km from the
-target.
+The same effect of precipitation intermittency is also evident in the results
+for averaging two cores from the Vostok study region (APPENDIX-FIG), with a
+similar difference in correlation structures between $T_{\mathrm{2m}}$ and
+$T_{\mathrm{2m}}^{\mathrm{(pw)}}$ as for the DML region, and a similar structure
+between $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ and
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ for distances
+$\lesssim1000$\,km. However, the results for the
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ field (APPENDIX-FIG c) do not display
+such a pronounced maximum when sampling one core from the innermost ring and the
+second one from ring further away as it is observed for the DML region, which
+points at an influence of the regional differences in the correlation structure
+of the $\delta^{18}\mathrm{O}$ field (Fig.~\ref{fig:avg.decor.lengths}).
 
-\noindent
-\#EDIT: Unclear whether to include the Vostok binning results here (see current
-figure). If so, then I have the impression that we need to present Vostok
-results also for the two previous figures.
+Despite these regional differences, the general feature is consistent throughout
+Antarctica. When we fix the first $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ core
+to the innermost ring and assess for all available Antarctic target sites the
+optimal ring bin of the second core, for which the expected correlation with the
+target site temperature is maximal, we find that in $\sim77\,\%$ of all cases
+the optimal location is at least in the second ($250$--$500$\,km) ring bin, and
+in $\sim61\,\%$ of the cases it is the second to fourth ring bin.
+
+Furthermore, we obtain similar results for averaging $N=3$ and $N=5$
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ cores to reconstruct a target
+site temperature (Fig.~\ref{fig:binning}). While for EDML as a target site, the
+optimal cores are arranged such that one core is placed in the innermost ring
+and the others are distributed at distances between $\sim500$ and $1500$\,km
+from the target, for Vostok the cores are mostly distributed across the second
+to fourth ring.
 
 \noindent
 \#EDIT: What is missing:
@@ -526,17 +540,15 @@ results also for the two previous figures.
 %f06
 \begin{figure*}[t]%
 \centering
-\includegraphics[width=16cm]{../plots/main/echam5_mpiom_wiso_binning.pdf}
+\includegraphics[width=16cm]{../plots/main/fig_06.pdf}
 \caption{%
-  The optimal arrangement of averaging three or five
-  $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ cores to reconstruct the target site
-  temperature at EDML (\textbf{a}, \textbf{c}) and Vostok (\textbf{b},
-  \textbf{d}). Displayed are the optimal five of all possible combinations of
-  ring bins, i.e. those which exhibit the highest mean correlation across $1000$
-  (\#EDIT: to be increased) random trials of averaging $N=3$ (\textbf{c},
-  \textbf{d}) or $N=5$ (\textbf{a}, \textbf{b}) grid cells from these
-  rings. \#EDIT: the figure could also be done for the average across target
-  sites in the \emph{regions} DML and Vostok.}
+  The optimal arrangement for averaging three or five
+  $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ ice cores to reconstruct the target
+  site temperature at the EDML (\textbf{a}, \textbf{c}) and Vostok (\textbf{b},
+  \textbf{d}) drilling sites. Displayed are the optimal five of all possible
+  combinations of ring bins, i.e. those which exhibit the highest mean
+  correlation across $10^5$ random trials of averaging $N=3$ (\textbf{c},
+  \textbf{d}) or $N=5$ (\textbf{a}, \textbf{b}) grid cells from these rings.}
 \label{fig:binning}%
 \end{figure*}%
 
