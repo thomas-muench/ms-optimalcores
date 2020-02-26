@@ -63,15 +63,18 @@ problems.
 
 The oxygen and hydrogen isotopic composition of firn and ice recovered from
 polar ice cores is a key proxy for past near-surface air temperature changes
-(\#REF). Although the physical mechanisms that link local changes in temperature
-to the isotopic composition of precipitated snow are generally well understood
-(\#REF) and can be modelled with general circulation models (\#REF), the
+\citep{Dansgaard1964,Lorius1969,Masson-Delmotte2008,Sjolte2011}. Although the
+physical mechanisms that link local changes in temperature to the isotopic
+composition of precipitated snow are generally well understood
+\citep{Dansgaard1964,Craig1965,Jouzel1984} and can be modelled with general
+circulation models
+\citep{Joussaume1984,Werner2011,Werner2016,Sjolte2011,Goursaud2018}, the
 quantitative interpretation of ice-core isotope variabily in terms of
 temperature variability is complicated by second order processes that
-additionally influence the isotopic record, creating noise (\#REF). Analysing
-the typical spatial scales on which the different processes act helps to
-minimise variability, which is not related to temperature, by averaging ice-core
-records from an array of sites.
+additionally influence the isotopic record, creating noise \citep{Munch2018a}.
+Analysing the typical spatial scales on which the different processes act
+helps to minimise variability, which is not related to temperature, by
+averaging ice-core records from an array of sites.
 
 The isotopic record that is derived from an ice core is the result of a chain of
 processes from (1) atmospheric temperature changes to (2) the isotopic
@@ -82,29 +85,32 @@ scale.
 
 Atmospheric temperature variations drive the fractionation of the isotopic
 composition of the atmospheric moisture along its pathway to the final stage of
-precipitation (\#REF). The spatial coherence of the temperature-related isotopic
-signal in precipitation is hence given by the spatial coherence of the
-atmospheric temperature field itself. Typical spatial decorrelation scales for
-temperature are of the order of $\gtrsim1000$\,km (\#REF), which implies that
-ice cores distributed on spatial scales below $\sim 1000$\,km should record a
-similar, i.e. correlated, temperature signal. However, the temporal variability
-of the isotopic composition in the local atmospheric moisture also depends on
-the variability of the atmospheric circulation, since different air masses may
-exhibit different source regions and distillation pathways (\#REF). In addition,
-in an ice core, the isotopic composition in a deposited layer of snow will not
-one-to-one reflect the temporal variability of the atmospheric isotope signal
-due to the intermittent nature of precipitation (\#REF), which weights the
+precipitation \citep{Dansgaard1964,Jouzel1984}. The spatial coherence
+of the temperature-related isotopic signal in precipitation is hence given by
+the spatial coherence of the atmospheric temperature field itself. Typical
+spatial decorrelation scales for temperature are of the order of
+$\gtrsim1000$\,km \citep{Jones1997}, which implies that ice cores distributed on
+spatial scales below $\sim 1000$\,km should record a similar, i.e. correlated,
+temperature signal. However, the temporal variability of the isotopic
+composition in the local atmospheric moisture also depends on the variability of
+the atmospheric circulation, since different air masses may exhibit different
+source regions and distillation pathways
+\citep{Schlosser2004,Sodemann2008a,Birks2009,Kuttel2012}. In addition, in an ice
+core, the isotopic composition in a deposited layer of snow will not one-to-one
+reflect the temporal variability of the atmospheric isotope signal due to the
+intermittent nature of precipitation \citep{Schleiss2015}, which weights the
 initial isotope signal with the amount of precipitation, thereby introducing
-bias and adding additional variability to the isotopic record (\#REF). Both
-processes are directly linked to the atmospheric dynamics, and their typical
-scales are hence expected to range from mesoscales (i.e. tens of kilometres),
-driven by topography and orographic effects, to synoptic scales of hundreds of
-kilometres associated with cyclonic activity and the movement of high and low
-presssure systems (\#REF). Finally, in polar conditions the precipitated snow
-does not directly settle but is constantly eroded, blown away and
-redeposited. It has been shown that this gives rise to stratigraphic noise in
-the isotopic record (\#REF:fisher) which exhibits a small-scale decorrelation of
-a few metres (\#REF:trench).%
+bias \citep{Steig1994,Laepple2011a} and adding additional variability to
+the isotopic record \citep{Persson2011,Casado2019}. Both processes are directly
+linked to the atmospheric dynamics, and their typical scales may hence be
+expected to range from mesoscales (i.e. tens of kilometres), driven by
+topography and orographic effects, to synoptic scales of hundreds of kilometres
+associated with cyclonic activity and the movement of high and low presssure
+systems. Finally, in polar conditions the precipitated snow does not directly
+settle but is constantly eroded, blown away and redeposited. It has been shown
+that this gives rise to stratigraphic noise in the isotopic record
+\citep{Fisher1985,Munch2016} which exhibits a small-scale decorrelation of a few
+metres \citep{Munch2016}.%
 \footnote{We note that the final isotopic record is influenced by further
   post-depositional processes within the snow and ice matrix, such as
   densification and diffusion, which are, however, not within the scope of this
@@ -119,16 +125,17 @@ example, if we only considered temperature and stratigraphic noise, it would be
 sufficient to average records spaced just some tens of metres apart, as this
 would ensure highly correlated temperature signals but uncorrelated
 stratigraphic noise between the records. However, the comparison of
-correlation-based signal-to-noise ratios of nearby isotope records (\#REF) with
-those estimated from analysing the record's temporal variability (\#REF) has
-shown that reproducibility on a local scale does not necessarily imply a
-climatic, i.e. temperature-driven, origin. Instead, circulation variability and
-precipitation intermittency act as further noise sources which are expected to
-exhibit larger decorrelation lengths (\#REF:cp18,cycles) than the stratigraphic
-noise. Taking this into account, we expect some optimal length scale in between
-the local and the temperature decorrelation scale which is a trade-off between
-averaging out circulation and intermittency effects and ensuring a sufficient
-coherence of the recorded temperature signal.
+correlation-based signal-to-noise ratios of nearby isotope records
+\citep{Munch2016,Munch2017} with those estimated from analysing the record's
+temporal variability \citep{Laepple2018} shows that reproducibility on a local
+scale does not necessarily imply a climatic, i.e. temperature-driven,
+origin. Instead, circulation variability and precipitation intermittency act as
+further noise sources which are expected to exhibit larger decorrelation lengths
+than the stratigraphic noise \citep{Laepple2018,Munch2018a}. Taking this into
+account, we expect some optimal length scale in between the local and the
+temperature decorrelation scale which is a trade-off between averaging out
+circulation and intermittency effects and ensuring a sufficient coherence of the
+recorded temperature signal.
 
 Here, we use data from a climate model equipped with stable isotope diagnostics
 to learn about the different process scales and to link this to the optimal
@@ -146,24 +153,24 @@ single record (\#EDIT).
 
 \subsection{Climate model data}\label{methods:data}
 
-We use data of the past-millennium simulation (800--2000\,CE; \#REF:Sjolte2018)
-of the fully coupled ECHAM5/MPI-OM-wiso atmosphere--ocean general circulation
-model equipped with stable isotope diagnostics (\#REF:Werner2016). This
-simulation is forced by greenhouse gases, volcanic aerosols, total solar
-irradiance and changes in land use and Earth's orbital parameters. The
-atmospheric component of the model has a T31 spectral resolution
+We use data of the past-millennium simulation (800--2000\,CE;
+\citealp{Sjolte2018}) of the fully coupled ECHAM5/MPI-OM-wiso atmosphere--ocean
+general circulation model equipped with stable isotope diagnostics
+\citep{Werner2016}. This simulation is forced by greenhouse gases, volcanic
+aerosols, total solar irradiance and changes in land use and Earth's orbital
+parameters. The atmospheric component of the model has a T31 spectral resolution
 ($3.75\degree\times3.75\degree$) with $19$ vertical levels
-(\#REF:Sjolte2018). Compared to observations, the atmospheric model ECHAM5-wiso
+\citep{Sjolte2018}. Compared to observations, the atmospheric model ECHAM5-wiso
 generally reproduces the climatological relation between temperature and
 precipitation isotopic composition well, but has, in the used T31 setup, a warm
 bias and is not depleted enough in isotopic composition over Antarctica
-(\#REF:Werner2011). This can be improved by a higher spatial resolution
-(\#REF:Werner2011) but is not relevant for our study since we are mainly
+\citep{Werner2011}. This can be improved by a higher spatial resolution
+\citep{Werner2011} but is not relevant for our study since we are mainly
 interested in the relative variability between sites. The full atmosphere--ocean
 model was evaluated against observations for equilibrium simulations under
-pre-industrial and Last Glacial Maximum conditions (\#REF:Werner2016), and the
+pre-industrial and Last Glacial Maximum conditions \citep{Werner2016}, and the
 past-millennium simulation was used to reconstruct North Atlantic atmospheric
-circulation in combination with ice-core isotope data (\#REF:Sjolte2018).
+circulation in combination with ice-core isotope data \citep{Sjolte2018}.
 
 Here, we use the ECHAM5/MPI-OM-wiso time series for all model grid cells
 on the Antarctic continent ($N_{\mathrm{grid}}=442$) of two-metre air
@@ -293,14 +300,14 @@ For the first region, the Dronning Maud Land (DML) region in the following, we
 choose all model grid cells ($N_{\mathrm{grid}}=26$) within a range of
 $\pm17.5\degree$ longitude and $\pm5\degree$ latitude around the EPICA Dronning
 Maud Land site (EDML; $-75\degree$\,S, $0\degree$\,E). This region covers the
-locations of the deep EDML ice core (\#EDML) and of $>50$ firn and shallow ice
-cores (\#ALTNAU). For the second region, referred to as the Vostok region, we
-choose an identical latitudinal and longitudinal coverage
-($N_{\mathrm{grid}}=30$) with respect to the Vostok station ($-78.47\degree$\,S,
-$106.83\degree$\,E), covering the locations of the deep Vostok and Dome C ice
-cores as well as of several shallower cores (\#STENNI), and including the new
-deep drilling site for retrieving an ice core reaching back more than one
-million years.
+locations of the deep EDML ice core \citep{EPICAcommunitymembers2006} and of
+$>50$ firn and shallow ice cores \citep{Altnau2015}. For the second region,
+referred to as the Vostok region, we choose an identical latitudinal and
+longitudinal coverage ($N_{\mathrm{grid}}=30$) with respect to the Vostok
+station ($-78.47\degree$\,S, $106.83\degree$\,E), covering the locations of the
+deep Vostok and Dome C ice cores as well as of several shallower cores
+\citep{Stenni2017}, and including the new deep drilling site for retrieving an
+ice core reaching back more than one million years.
 
 \section{Results}\label{results}
 
@@ -810,7 +817,7 @@ g(z; \tau, \tau_{\mathrm{pw}}, \xi):=
 % \begin{acknowledgements}
 % \end{acknowledgements}
 
-% \bibliographystyle{copernicus}
-% \bibliography{muench-etal_optimalcores}
+\bibliographystyle{copernicus}
+\bibliography{muench_etal_optimalcores}
 
 \end{document}
