@@ -676,9 +676,8 @@ sampling $N=2$ cores from rings in the Vostok study region
 \label{app:concept.model.general}
 
 We set up a conceptual model for the correlation between a target temperature
-time series and the spatial average of a climatic field, specifically for the
-variables temperature and precipitation-weighted temperature. Our model builds
-upon assuming simple isotropic and exponential decorrelation structures for the
+time series and the spatial average of a climatic field. Our model builds upon
+assuming simple isotropic and exponential decorrelation structures for the
 involved climatic fields and on previous work which suggests that precipitation
 intermittency partially converts the input time series into white noise.
 
@@ -814,6 +813,107 @@ g(z; \tau, \tau_{\mathrm{pw}}, \xi):=
 (1-\xi)\exp{\left(-\frac{z}{\tau}\right)} +
 \xi\exp{\left(-\frac{z}{\tau_{\mathrm{pw}}}\right)}.
 \end{equation}
+
+\subsection{Precipitation-weighted oxygen isotope composition}
+\label{app:concept.model.oxy.pw}
+
+For the field of precipiation-weighted oxygen isotope composition, $x \equiv
+\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, we assume the same effect of
+precipitation intermittency as for the temperature field. Furthermore, an
+analysis of the climate model data shows that also the $\delta^{18}\mathrm{O}$
+field largely exhibits an exponential decorrelation structure in space. Hence,
+the correlation between the target site temperature and the spatial average of
+$N$ $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series is obtained in a similar
+manner as for $T^{\mathrm{(pw)}}$, i.e.
+%
+\begin{equation}
+\label{eq:oxy.pw.corr}
+\mathrm{cor}\left(T_0,
+  \overline{\delta^{18}\mathrm{O}}^{\mathrm{(pw)}}\right)=
+\frac
+{\sqrt{1-\xi}\sum_{i=1}^{N}\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)}
+{\sqrt{N + 2\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}
+  g(d_{ij}; \tau_{\delta}, \tau_{\mathrm{pw}}, \xi)}},
+\end{equation}
+%
+where $\tau_{\delta}$ is the decorrelation length of the $\delta^{18}\mathrm{O}$
+field and the only difference to Eq.~\eqref{eq:t2m.pw.corr} is the unknown
+spatial correlation structure between the temperature at the target site and the
+oxygen isotope field, $\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)$.
+Based on our climate model results (Fig.~\ref{fig:avg.cor.structure}), we
+parameterise this function with a simple linear decay of the form
+%
+\begin{equation}
+\label{eq:t2m.oxy.corr}
+\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)=
+\begin{cases}
+  c_0 - \gamma d, & d \le d_0,\\
+  c_1, & d > d_0,
+\end{cases}
+\end{equation}
+%
+where $\gamma=(c_0-c_1)/d_0$ and $d_0$ is some threshold distance above which
+the correlation stays constant.
+
+\subsection{Model parameter estimation and model results}
+\label{app:concept.model.estimation}
+
+In total, our model is governed by three decorrelation lengths ($\tau$,
+$\tau_{\delta}$, $\tau_{\mathrm{pw}}$), the intermittency factor $\xi$, and
+three parameters describing the temperature--isotope correlation ($c_0$, $c_1$,
+$d_0$).
+
+We estimate $\tau$ from the climate model data for the DML and Vostok regions
+(Fig.~\ref{fig:avg.cor.structure}), as well as in the same way
+$\tau_{\delta}$, and find for both regions values of $\tau=1900$\,km and
+$\tau_{\delta}=1100$\,km. The intermittency factor $\xi$ follows from the
+local correlation between temperature and precipitation-weighted temperature
+(Eq.~\ref{eq:t2m.pw.decorr}). We find for the DML region an average value of
+$\xi_{\mathrm{DML}}=0.73$ which is close to the average value for entire
+Antarctica ($\xi_{\mathrm{Ant.}}=0.71$), while the intermittency is stronger for
+the Vostok region ($\xi_{\mathrm{Vostok}}=0.82$). We parameterise the
+temperature--isotope correlation in the DML region with $c_0=0.4$, $c_1=0.2$,
+$d_0=1500$\,km, while the values are rather $c_0=0.5$ and $c_0=0$ for
+$d_0>2000$\,km in the Vostok region (Fig.~\ref{fig:avg.cor.structure}). The only
+unconstrained parameter is the decorrelation length of the effect of
+precipitation intermittency, $\tau_{\mathrm{pw}}$, for which we choose a value
+of $500$\,km based on investigations with reanalysis data \citep{Munch2018a}.
+
+We can test our assumption for the effect of intermittency based on using the
+estimated values of $\tau$ and $\xi$ to predict the spatial decorrelation
+between temperature and precipitation-weighted temperature
+(Eq.~\ref{eq:t2m.pw.decorr}). Indeed, this yields a comparably good fit to the
+data as an independent fit (root mean square deviation of $\sim0.03$ between
+data and fit in both cases), supporting our assumption that intermittency causes
+a partial conversion of the time series into white noise.
+
+%fB01
+\begin{figure*}[t]%
+\centering
+\includegraphics[width=17cm]{../plots/main/fig_B01.png}
+\caption{%
+  The expected correlation with the target site temperature for the average of
+  two sites as predicted from our conceptual model using the model parameters
+  for the DML region. Shown is the mean correlation of all possible individual
+  correlations from averaging two time series sampled from a pair of concentric
+  rings around the target site for the fields of (\textbf{a}) $T_{\mathrm{2m}}$,
+  (\textbf{b}) $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ and (\textbf{c})
+  $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$.}
+\label{fig:conceptual.model}%
+\end{figure*}%
+
+We now use our conceptual model to predict the correlation between a temperature
+time series at some target site and the average of two time series from sites
+placed on concentric rings around the target, depending on the climate field
+used. For this, we use ring radii from $0$ to $2000$\,km in increments of
+$10$\,km, sample sites either from the same or from two different rings, and
+calculate the expected correlation across all ring sites from varying the polar
+angle between the sites from $0\degree$ to $350\degree$ in steps of
+$10\degree$. We do this for sites sampled from the fields of $T_{\mathrm{2m}}$,
+$T_{\mathrm{2m}}^{\mathrm{(pw)}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$,
+using the model parameters for the DML region (Fig.~\ref{fig:conceptual.model}).
+The results are discussed and compared to the estimated results from the climate
+model data in the main text.
 
 \noappendix
 
