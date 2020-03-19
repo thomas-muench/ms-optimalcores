@@ -931,34 +931,33 @@ g(z; \tau, \tau_{\mathrm{pw}}, \xi):=
 \label{app:concept.model.oxy.pw}
 
 For the field of precipitation-weighted oxygen isotope composition, $x \equiv
-\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, we assume the same effect of
-precipitation intermittency as for the temperature field. Furthermore, an
-analysis of the climate model data shows that also the $\delta^{18}\mathrm{O}$
-field largely exhibits an exponential decorrelation structure in space. Hence,
-the correlation between the target site temperature and the spatial average of
-$N$ $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ time series is obtained in a similar
-manner as for $T^{\mathrm{(pw)}}$, i.e.
+\delta^{\mathrm{(pw)}}$, we assume the same effect of precipitation
+intermittency as for the temperature field. Furthermore, an analysis of the
+climate model data shows that also the oxygen isotope field largely exhibits an
+exponential decorrelation structure in space. Hence, the correlation between the
+target site temperature and the spatial average of $N$ $\delta^{\mathrm{(pw)}}$
+time series is obtained in a similar manner as for $T^{\mathrm{(pw)}}$, i.e.
 %
 \begin{equation}
 \label{eq:oxy.pw.corr}
 \mathrm{cor}\left(T_0,
-  \overline{\delta^{18}\mathrm{O}}^{\mathrm{(pw)}}\right)=
+  \overline{\delta}^{\mathrm{(pw)}}\right)=
 \frac
-{\sqrt{1-\xi}\sum_{i=1}^{N}\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)}
+{\sqrt{1-\xi}\sum_{i=1}^{N}\mathrm{cor}\left(T_0,\delta_i\right)}
 {\sqrt{N + 2\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}
   g(d_{ij}; \tau_{\delta}, \tau_{\mathrm{pw}}, \xi)}},
 \end{equation}
 %
-where $\tau_{\delta}$ is the decorrelation length of the $\delta^{18}\mathrm{O}$
-field and the only difference to Eq.~\eqref{eq:t2m.pw.corr} is the unknown
-spatial correlation structure between the temperature at the target site and the
-oxygen isotope field, $\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)$.
-Based on our climate model results (Fig.~\ref{fig:avg.cor.structure}), we
-parameterise this function with a simple linear decay of the form
+where $\tau_{\delta}$ is the decorrelation length of the $\delta$ field and the
+only difference to Eq.~\eqref{eq:t2m.pw.corr} is the unknown spatial correlation
+structure between the temperature at the target site and the oxygen isotope
+field, $\mathrm{cor}\left(T_0,\delta_i\right)$.  Based on our climate model
+results (Fig.~\ref{fig:avg.cor.structure}), we parameterise this function with a
+simple linear decay of the form
 %
 \begin{equation}
 \label{eq:t2m.oxy.corr}
-\mathrm{cor}\left(T_0,\delta_i^{18}\mathrm{O}\right)=
+\mathrm{cor}\left(T_0,\delta_i\right)=
 \begin{cases}
   c_0 - \gamma d, & d \le d_0,\\
   c_1, & d > d_0,
