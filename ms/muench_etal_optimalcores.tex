@@ -480,15 +480,15 @@ individual fields.
 \caption{%
   Spatial temperature correlation structures for the DML and Vostok regions.
   Shown is the average correlation as a function of distance between the
-  interannual near-surface temperature ($T_{2\mathrm{m}}$) and the spatial
-  fields of $T_{2\mathrm{m}}$ (black), oxygen isotope ($\delta^{18}\mathrm{O}$,
-  green) and precipitation-weighted oxygen isotope composition
-  ($\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, blue). Averaging is performed in two
-  steps: first, correlations are averaged across grid cells falling in $250$\,km
-  wide consecutive rings around a given target site, and secondly, these results
-  are averaged across all respective target sites in the DML (\textbf{a}) and
-  Vostok (\textbf{b}) region (see Methods). Dashed lines indicate an exponential
-  fit to the $T_{2\mathrm{m}}$ data.}
+  interannual near-surface temperature ($T_{2\mathrm{m}}$) at a target site and
+  the spatial fields of $T_{2\mathrm{m}}$ (black), oxygen isotope composition
+  ($\delta^{18}\mathrm{O}$, green) and precipitation-weighted oxygen isotope
+  composition ($\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, blue). Averaging is
+  performed in two steps: first, correlations are averaged across grid cells
+  falling in $250$\,km wide consecutive rings around a given target site, and
+  secondly, these results are averaged across all respective target sites in the
+  DML (\textbf{a}) and Vostok (\textbf{b}) region (see Methods). Dashed lines
+  indicate an exponential fit to the $T_{2\mathrm{m}}$ data.}
 \label{fig:avg.cor.structure}%
 \end{figure*}%
 
@@ -554,8 +554,8 @@ further away, as when we sample both sites from the innermost ring.
 
 The same effect of precipitation intermittency is also evident in the results
 for averaging two sites from the Vostok study region
-(Fig.~\ref{fig:two-core-correlation-vostok}), with a similar difference in
-correlation structures between $T_{\mathrm{2m}}$ and
+(Appendix~\ref{app:vostok.n2}: Fig.~\ref{fig:two-core-correlation-vostok}), with
+a similar difference in correlation structures between $T_{\mathrm{2m}}$ and
 $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ as for the DML region, and a similar structure
 between $T_{\mathrm{2m}}^{\mathrm{(pw)}}$ and
 $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ for distances $\lesssim1000$\,km.
@@ -567,7 +567,7 @@ influence of the regional differences in the correlation structure of the
 $\delta^{18}\mathrm{O}$ field (Fig.~\ref{fig:avg.cor.structure}).
 
 Despite these regional differences, the general feature for sampling
-$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ is consistent throughout
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ is robust throughout
 Antarctica. When we fix the first site to the innermost ring and assess for all
 available Antarctic target sites the optimal ring of the second site, for which
 the expected correlation with the target site temperature is maximal, we find
@@ -635,14 +635,127 @@ values being actually larger than the respective local correlation for $N=2$
 
 \section{Discussion}\label{discussion}
 
-(\#ADD: compare local t2m-oxy.pw correlation with previous studies,
-e.g. Goursaud2018/ECHAM5-wiso with ERA-Interim?)
+\subsection{Conceptual model of the optimal sampling structure}
+\label{discussion:concept.model}
+
+Oxygen isotope records derived from ice cores are commonly interpreted to be
+reflecting local temperature changes at the ice-core drilling site. Here, in a
+systematic study of the interannual correlation in a climate model between
+precipitation-weighted oxygen isotope composition and near-surface atmospheric
+temperature, we show that while there is local isotope--temperature correlation
+(Fig.~\ref{fig:correlation.maps}b), this correlation is considerably increased
+by averaging isotope records across space following a distinct spatial pattern
+which mostly combines the local target site with sites located between a few
+hundred to up to $\sim1000$\,km from this site
+(Figs.~\ref{fig:two-core-correlation}c, \ref{fig:binning} and
+\ref{fig:two-core-correlation-vostok}c). In the following, we develop a
+qualitative understanding of these results from a conceptual model for the
+spatial correlation structure of the processes that shape the isotopic
+composition time series.
+
+For this conceptual model, we focus on three processes that influence the oxygen
+isotope records in ice cores: (i) temperature variations, (ii) precipitation
+intermittency, and (iii) the temperature--isotope relationship, and we
+separately model the associated fields of $T_{\mathrm{2m}}$,
+$T_{2\mathrm{m}}^{\mathrm{(pw)}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ in
+order to understand the influence of each process (see
+Appendix~\ref{app:concept.model} for details). For comparable results, we assess
+the expected target temperature correlation for averaging two sites in the same
+manner as for analysing the climate model data.
+
+To model the atmospheric temperature field, we assume an isotropic exponential
+decay of the correlation in space with a constant decorrelation length
+(Appendix~\ref{app:concept.model.t2m}). Such an exponential temperature
+decorrelation is a commonly observed feature \citep{Jones1997} (\#MORE refs?)
+and also confirmed by our climate model data (Fig.~\ref{fig:correlation.maps}a
+and Fig.~\ref{fig:avg.cor.structure}). Given this relationship, we obtain a good
+agreement for the expected correlation with the target site temperature when
+averaging two sites between the conceptual model and the climate model data,
+both regarding absolute correlation values as well as spatial correlation
+structure (Fig.~\ref{fig:conceptual.model}a). We emphasise that the maximum
+correlation with the target site temperature naturally occurs for an isotropic
+correlation decay when the averaged two (or $N$) sites are close to the target
+site, as any site which is further away will result in a smaller common
+temperature signal between the sites.
+
+To elucidate the role of precipitation intermittency, we follow the simplest
+assumption that this process partly converts the original temperature time
+series into temporal white noise \citep{Laepple2018}, but further assume that
+this noise is not independent between sites but also follows an exponential
+decorrelation in space with a second length scale
+(Appendix~\ref{app:concept.model.t2m.pw}). The motivation for this length scale
+is that the spatial occurrence of precipitation should not be random but exhibit
+a typical extent related to the atmospheric processes that deliver the
+precipitation, e.g. synoptic systems. This suggests an intermittency length
+scale which is smaller than the temperature decorrelation scale.  Introducing
+such a second length scale into our conceptual model can generally explain the
+optimal sampling structure we obtain from the climate model data. Qualitatively,
+close-by sites exhibit a strong correlation of temperature but also of the noise
+from precipitation intermittency, which thus cannot be reduced by averaging
+those sites, yielding an overall low signal-to-noise ratio. However, with
+increasing distance between the sites, the intermittency noise decorrelates
+faster than the temperature field due to the different decorrelation scales,
+which results in an optimal distance of maximum signal-to-noise ratio. This is
+exactly what we observe in the conceptual model
+(Fig.~\ref{fig:conceptual.model}b). For fixing one site to the target site, the
+correlation with the target site temperature  first increases with increasing
+distance of the second site and maximises at an optimal distance, before it
+decays again with further increasing distance. In the climate model data, we
+observe a similar feature for the precipitation-weighted temperature
+(Figs.~\ref{fig:two-core-correlation} and
+\ref{fig:two-core-correlation-vostok}), though not as clear as in the conceptual
+model. Also the range of correlation values matches reasonable well between the
+climate model data and the conceptual model; the latter, however, does not
+reproduce the detailed spatial structure and also fails to explain the clear
+differences in correlation structure between the DML and Vostok regions. This
+suggests a too simplistic implementation of precipitation intermittency in our
+conceptual model, which does not capture its detailed effects and regional
+differences.
+
+In order to incorporate the field of $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$
+into the conceptual model, we need to account for the spatial
+temperature--isotope relationship. For this, we parameterise the spatial
+dependence of the correlation between temperature and the oxygen isotope
+composition with a simple isotropic linear model based on the climate model data
+results (Fig.~\ref{fig:avg.cor.structure} and
+Appendix~\ref{app:concept.model.oxy.pw}). In addition, it is straightforward to
+assume the same effect of precipitation intermittency as for the temperature
+field. With these simple assumptions, we obtain a surprisingly good qualitative
+agreement for the DML region between the conceptual model and the climate model
+data results (cf. Figs.~\ref{fig:conceptual.model}c and
+\ref{fig:two-core-correlation}c). In addition, when we change the parameterised
+isotope--temperature relationship such that it more resembles the Vostok region
+data (Fig.~\ref{fig:avg.cor.structure}b), also the spatial correlation structure
+in the conceptual model (not shown) is more similar to the one observed
+(Fig.~\ref{fig:two-core-correlation-vostok}c). However, in general the
+conceptual model here fails to reproduce the actual range of correlations by
+showing much lower values than expected.
+
+In summary, our conceptual model provides a quantitative understanding of the
+correlation between temperature in the climate model data, and~--~at least~--~a
+qualitative understanding of the processes that affect the correlation with the
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ field, i.e. precipitation intermittency
+and the spatial temperature--isotope relationship. The deficiencies of the
+conceptual model can be attributed to its simplicity. We only assume spatially
+constant length scales for the governing processes, neglecting local differences
+in, e.g., temperature decorrelation lengths
+(cf.~Fig.~\ref{fig:correlation.maps}a) or the spatial extent of the coherence of
+precipitation intermittency, which is probably not constant but different for
+different types of precipitation, e.g. synoptic versus clear-sky precipitation.
+Furthermore, we assume constant variance of all time series, which ignores
+potential weighting effects on the correlation for the spatial average of sites
+due to different variability between them.
+
+\subsection{Relevance to ice-core studies}
+\label{discussion:relevance}
+
+TBD.
 
 % \codedataavailability{TEXT} %% use this section when having data sets and software code available
 
 \appendix
 
-\section{$N=2$ sampling results for Vostok region}
+\section{Vostok region sampling results ($N=2$)}
 \label{app:vostok.n2}
 
 For a clearer structure of the main text, we here provide the results for
@@ -817,7 +930,7 @@ g(z; \tau, \tau_{\mathrm{pw}}, \xi):=
 \subsection{Precipitation-weighted oxygen isotope composition}
 \label{app:concept.model.oxy.pw}
 
-For the field of precipiation-weighted oxygen isotope composition, $x \equiv
+For the field of precipitation-weighted oxygen isotope composition, $x \equiv
 \delta^{18}\mathrm{O}^{\mathrm{(pw)}}$, we assume the same effect of
 precipitation intermittency as for the temperature field. Furthermore, an
 analysis of the climate model data shows that also the $\delta^{18}\mathrm{O}$
@@ -903,7 +1016,7 @@ a partial conversion of the time series into white noise.
 \end{figure*}%
 
 We now use our conceptual model to predict the correlation between a temperature
-time series at some target site and the average of two time series from sites
+time series at some target site and the average of $N=2$ time series from sites
 placed on concentric rings around the target, depending on the climate field
 used. For this, we use ring radii from $0$ to $2000$\,km in increments of
 $10$\,km, sample sites either from the same or from two different rings, and
