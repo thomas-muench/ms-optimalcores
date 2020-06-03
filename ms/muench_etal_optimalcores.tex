@@ -1,4 +1,4 @@
-\documentclass[cp, manuscript, draft]{copernicus}
+\documentclass[cp, manuscript]{copernicus}
 
 \begin{document}
 
@@ -70,7 +70,7 @@ isotopic composition of precipitated snow are generally well understood
 circulation models
 \citep{Joussaume1984,Werner2011,Werner2016,Sjolte2011,Goursaud2018}, the
 quantitative interpretation of ice-core isotope variability in terms of
-temperature variability is complicated by second order processes that
+temperature variability is complicated by second-order processes that
 additionally influence the isotopic record, creating noise \citep{Munch2018a}.
 Here, an analysis of the typical spatial scales on which the different processes
 act offers a way to minimise the variability which is not related to temperature
@@ -766,28 +766,92 @@ related to topography. Furthermore, we assume constant variance of all
 time series, which ignores potential weighting effects on the correlation for
 the spatial average of locations due to different variability between them.
 
-\subsection{Relevance to ice-core studies}
+\subsection{Relevance for ice-core studies}
 \label{discussion:relevance}
 
-TBD.
+The optimal sampling correlation structures, which we obtained from analysing
+the climate model data and substantiated with our conceptual model, directly
+give a guide where to drill or analyse $N=1, 2, 3$ or more ice cores in order to
+optimally reconstruct the atmospheric temperature signal for a certain target
+site or region.
 
-\noindent Some first thoughts, feel free to add more:
-\begin{itemize}
-\item discuss usefulness of large clusters of relatively nearby cores, e.g. as
-  existent in DML, but also consider stratigraphic noise as additional important
-  factor. In light of our results, then largely spaced clusters of local cores
-  would be more useful.
-\item Weighting of ice-core time series to account for an optimal spacing.
-\end{itemize}
+If it is only possible to drill or analyse a single ice core, our results
+show that it is always best to sample locally, i.e.\ to place this core
+close to the target site of interest. This is also common practice, given the
+usual interpretation of ice-core isotope records as a proxy for local
+temperatures. However, due to the effect of precipitation intermittency, it is
+already for the option of drilling two ice cores no longer optimal to place both
+these cores locally, but instead to drill one core at the target site and one
+further away by at least $500$\,km. In the case of drilling or analysing three
+or more ice cores, we expect the optimal spatial configuration to be more
+dependent on the study region. But our results indicate that in general it is
+still likely better to place one core locally and distribute the others across
+several hundreds of kilometres.
+
+We note that these inferences are based on data from a single climate model
+simulation together with a simple statistical conceptual model, which should be
+tested against observations. In order to do so we need to create an isotope
+record that is in first order only governed by temperature variations and
+precipitation intermittency by removing the impact of local stratigraphic noise
+from the actual measured records (assuming that any further processes in the
+pre-depositional to depositional phase only contribute negligibly to the local
+isotopic variations). For this it has proven successful to conduct trench
+sampling campaigns (see \citealp{Munch2016,Munch2017} for the EDML site). One
+test of our optimal sampling structures could then be to combine one trench
+record, e.g.\ one from EDML, with another trench sampled at the optimal distance
+based on our results for $N=2$, and correlate the average of these two trench
+records with the instrumental temperature data set available for EDML. Based on
+our results here we would expect a higher correlation in this case than compared
+to using only one local trench record from EDML. We note that such an approach
+would be limited by the small amount of available instrumental data
+($\sim20$\,years for EDML) and by the inevitable dating uncertainties between
+the the two trench records.
+
+% \noindent
+% TBD.
+
+% \noindent Some first thoughts, feel free to add more:
+% \begin{itemize}
+% \item discuss usefulness of large clusters of relatively nearby cores, e.g. as
+%   existent in DML, but also consider stratigraphic noise as additional important
+%   factor. In light of our results, then largely spaced clusters of local cores
+%   would be more useful.
+% \item Weighting of ice-core time series to account for an optimal spacing.
+% \end{itemize}
 
 % \codedataavailability{TEXT} %% use this section when having data sets and software code available
+
+\conclusions
+
+In this study we assessed the question of which spatial sampling configuration
+for ice cores optimally reconstructs the annual near-surface temperatures at a
+certain site. This problem was motivated by the expectation that the major
+processes influencing the isotopic record of ice cores operate on different
+spatial scales.
+
+Indeed, by analysing the temperature and isotope data of an isotope-enabled
+atmosphere--ocean climate model simulating the climatic history over the last
+millennium we showed that while in the optimal setup a single ice core should be
+placed on average close to the target site of interest, already the second core
+should be put far ($>500$\,km) from the first core. At first sight, this might
+be an unexpected result, but we could show by comparing our climate model
+results with a simple conceptual model that it can be straightforwardly
+explained by the interplay of two different correlation lengths in space: one
+for the temperature anomalies and one parameterising the spatial coherence of
+the effect of precipitation intermittency.
+
+Our study hence explicitly helps improving the setting up of drilling or
+analysis campaigns for spatial networks of ice-core isotope records. In
+addition, it provides in general the means to analyse an optimal configuration
+of measurement locations for proxies, which are influenced by processes that
+exhibit different spatial correlation scales.
 
 \appendix
 
 \section{Two-dimensional sampling correlation structure for the Vostok region}
 \label{app:vostok.n2}
 
-In order to streamline the main text, we here provide the results of the
+In order to streamline the main text, we provide here the results of the
 average two-dimensional sampling correlation structures ($N=2$) for the Vostok
 study region (Fig.~\ref{fig:two-core-correlation-vostok}).
 
