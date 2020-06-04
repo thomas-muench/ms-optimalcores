@@ -1059,20 +1059,19 @@ simple linear decay of the form
 \mathrm{cor}\left(T_0,\delta_i\right)=
 \begin{cases}
   c_0 - \gamma d, & d \le d_0,\\
-  c_1, & d > d_0,
+  0, & d > d_0,
 \end{cases}
 \end{equation}
 %
-where $\gamma=(c_0-c_1)/d_0$ and $d_0$ is some threshold distance above which
-the correlation stays constant.
+where $\gamma=c_0/d_0$ and $d_0$ is some threshold distance above which
+the correlation is zero.
 
 \subsection{Model parameter estimation and model results}
 \label{app:concept.model.estimation}
 
 In total, our model is governed by three decorrelation lengths ($\tau$,
 $\tau_{\delta}$, $\tau_{\mathrm{pw}}$), the intermittency factor $\xi$, and
-three parameters describing the temperature--isotope correlation ($c_0$, $c_1$,
-$d_0$).
+two parameters describing the temperature--isotope correlation ($c_0$, $d_0$).
 
 We estimate $\tau$ from the climate model data for the DML and Vostok regions
 (Fig.~\ref{fig:avg.cor.structure}), as well as in the same way
@@ -1083,12 +1082,12 @@ local correlation between temperature and precipitation-weighted temperature
 $\xi_{\mathrm{DML}}=0.73$ which is close to the average value for entire
 Antarctica ($\xi_{\mathrm{Ant.}}=0.71$), while the intermittency is stronger for
 the Vostok region ($\xi_{\mathrm{Vostok}}=0.82$). We parameterise the
-temperature--isotope correlation in the DML region with $c_0=0.4$, $c_1=0.2$,
-$d_0=1500$\,km, while the values are rather $c_0=0.5$ and $c_1=0$ for
-$d_0>2000$\,km in the Vostok region (Fig.~\ref{fig:avg.cor.structure}). The only
-unconstrained parameter is the decorrelation length of the effect of
-precipitation intermittency, $\tau_{\mathrm{pw}}$, for which we choose a value
-of $500$\,km based on investigations with reanalysis data \citep{Munch2018a}.
+temperature--isotope correlation in the DML region with $c_0=0.4$ and
+$d_0=6000$\,km and with $c_0=0.5$ and $d_0=2500$\,km in the Vostok region
+(Fig.~\ref{fig:avg.cor.structure}). The only unconstrained parameter is the
+decorrelation length of the effect of precipitation intermittency,
+$\tau_{\mathrm{pw}}$, for which we choose a value of $500$\,km based on
+investigations with reanalysis data \citep{Munch2018a}.
 
 We can test our assumption for the effect of intermittency based on using the
 estimated values of $\tau$ and $\xi$ to predict the spatial decorrelation
