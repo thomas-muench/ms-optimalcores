@@ -853,14 +853,14 @@ for the Vostok study region here in Fig.~\ref{fig:two-core-correlation-vostok}.
 \label{app:concept.model.general}
 
 We set up a conceptual model for the correlation between a target temperature
-time series and the spatial average of a set of locations sampled from a
-climatic field (sampling correlation structure). Our model builds upon assuming
-simple isotropic and exponential decorrelation structures for the involved
-climatic fields and on previous work which suggests that precipitation
+time series and a spatial average based on a set of locations sampled from a
+climatic field (sampling correlation structure). Our model assumes simple
+isotropic and exponential decorrelation structures for the involved climatic
+fields and is based on previous work which suggests that precipitation
 intermittency can be described by partly aliasing the original temperature
 signal into white noise \citep{Laepple2018}.
 
-For the model, we consider a temperature time series $T_0$ at some target site
+In the model, we consider a temperature time series $T_0$ at some target site
 $\mathbf{r}_0$ and a field $x$ of a given climate variable. From this field, we
 select $N$ time series $x_i$ at the locations $\mathbf{r}_i$, $i=1,\dotsc,N$,
 and denote the spatial average of these time series by
@@ -896,9 +896,8 @@ their spatial average,
 \right).
 \end{equation}
 %
-In our model, as we will show in the following, these quantities depend on the
-distances between sites and on the correlation structure of the respective field
-$x$.
+In our model, these quantities depend on the distance between sites and on the
+correlation structure of the respective field $x$, as we show in the following.
 
 \subsection{Temperature}
 \label{app:concept.model.t2m}
@@ -906,7 +905,7 @@ $x$.
 For the near-surface temperature field, $x \equiv T$, we assume a spatially
 constant variance, $\mathrm{var}(T_0)=\mathrm{var}(T_i)\equiv\sigma_T^2$, and an
 isotropic decorrelation following an exponential decay with a decorrelation
-length $\tau$; i.e. the covariance between sites is given by
+length $\tau$; i.e., the covariance between sites is
 %
 \begin{align}
 \label{eq:t2m.decorr}
@@ -914,8 +913,8 @@ length $\tau$; i.e. the covariance between sites is given by
 \mathrm{cov}(T_i,T_j)&=\sigma_T^2\exp{\left(-\frac{d_{ij}}{\tau}\right)}.
 \end{align}
 %
-For the correlation between the target site temperature and the spatial average
-of $N$ temperature time series then follows
+The correlation between the target site temperature and the spatial average of
+$N$ temperature time series is then obtained from
 %
 \begin{equation}
 \label{eq:t2m.corr}
@@ -931,9 +930,9 @@ of $N$ temperature time series then follows
 To model the effect of precipitation intermittency, we follow
 \citet{Laepple2018} and assume that precipitation intermittency redistributes
 the energy of the temperature time series constantly across frequencies,
-i.e. creating temporal white noise without changing the total variance. Then,
-the precipitation-weighted temperature time series at the location
-$\mathbf{r}_i$ arises from $T_i$ as
+i.e., creating temporal white noise without changing the total variance. Then,
+the precipitation-weighted temperature time series at location $\mathbf{r}_i$
+arises from $T_i$ as
 %
 \begin{equation}
 \label{eq:precip.weighting}
@@ -941,10 +940,10 @@ T_i^{\mathrm{(pw)}}=
 \left(1-\xi\right)^{1/2}T_i + \xi^{1/2} \sigma_T \varepsilon_i(0,1),
 \end{equation}
 %
-where $\varepsilon_i(0,1)$ are independent normally distributed random variables
-with zero mean and standard deviation $1$, and the parameter $0\leq\xi\leq1$
-determines the fraction of the input temperature time series which is aliased
-into white noise.
+where $\varepsilon_i(0,1)$ are independent and normally distributed random
+variables with a mean of zero and a standard deviation of $1$. The parameter
+$0\leq\xi\leq1$ determines the fraction of the input temperature time series
+which is aliased into white noise.
 
 The covariance between the target site temperature and a precipitation-weighted
 temperature time series is then
@@ -958,15 +957,15 @@ which implies that the spatial correlation structure between $T_0$ and the
 precipitation-weighted temperature follows the same exponential decay as
 Eq.~\eqref{eq:t2m.decorr}, only scaled by the factor $(1-\xi)^{1/2}$. The factor
 $\xi$ can be estimated from the climate model data by analysing the local
-correlation, i.e. at the same grid cell, between temperature and
+correlation, i.e., at the same grid cell, between the temperature and the
 precipitation-weighted temperature.
 
 We further assume that the effect of precipitation intermittency is not
 independent between sites but is related to the spatial coherence of the
 precipitation fields, for which we assume an exponential decorrelation structure
-with a decay length $\tau_{\mathrm{pw}}$. Following these assumptions, the
+with a decay length $\tau_{\mathrm{pw}}$. Based on these assumptions, the
 spatial covariance between sites of the white noise terms induced by the effect
-of precipitation intermitteny has the form
+of precipitation intermittency has the form
 %
 \begin{equation}
 \label{eq:noise.cov}
@@ -999,14 +998,14 @@ g(d_{ij}; \tau, \tau_{\mathrm{pw}}, \xi):=
 \subsection{Precipitation-weighted oxygen isotope composition}
 \label{app:concept.model.oxy.pw}
 
-For the field of precipitation-weighted oxygen isotope composition, $x \equiv
+For the precipitation-weighted oxygen isotope composition field, $x \equiv
 \delta^{\mathrm{(pw)}}$, we assume the same effect of precipitation
-intermittency as for the temperature field. Furthermore, an analysis of the
-climate model data suggests that also the oxygen isotope field largely exhibits
+intermittency as on the temperature field. Furthermore, an analysis of the
+climate model data suggests that the oxygen isotope field largely exhibits
 an exponential decorrelation structure in space (not shown). Hence, the
 correlation between the target site temperature and the spatial average of $N$
 $\delta^{\mathrm{(pw)}}$ time series is obtained in a similar manner as for
-$T^{\mathrm{(pw)}}$, i.e.
+$T^{\mathrm{(pw)}}$, i.e.,
 %
 \begin{equation}
 \label{eq:oxy.pw.corr}
@@ -1040,25 +1039,25 @@ the correlation is zero.
 \subsection{Model parameter estimation and model results}
 \label{app:concept.model.estimation}
 
-In total, our model is governed by three decorrelation lengths ($\tau$,
-$\tau_{\delta}$, $\tau_{\mathrm{pw}}$), the intermittency factor $\xi$, and
-two parameters describing the temperature--isotope correlation ($c_0$, $d_0$).
+Overall, our model is governed by three decorrelation lengths ($\tau$,
+$\tau_{\delta}$, $\tau_{\mathrm{pw}}$), the intermittency factor $\xi$, and two
+parameters describing the temperature--isotope correlation ($c_0$, $d_0$).
 
 We estimate $\tau$ from the climate model data for the DML and Vostok regions
-(Fig.~\ref{fig:avg.cor.structure}), as well as in the same way
-$\tau_{\delta}$, and find for both regions values of $\tau=1900$\,km and
-$\tau_{\delta}=1100$\,km. The intermittency factor $\xi$ follows from the
-local correlation between temperature and precipitation-weighted temperature
+(Fig.~\ref{fig:avg.cor.structure}) and find for both regions values of
+$\tau=1900$\,km. In the same way we estimate a value of $\tau_{\delta}=1100$\,km
+for both regions. The intermittency factor $\xi$ is derived from the local
+correlation between temperature and precipitation-weighted temperature
 (Eq.~\ref{eq:t2m.pw.decorr}). We find an average value for the DML region of
-$\xi_{\mathrm{DML}}=0.73$ which is close to the average value for entire
+$\xi_{\mathrm{DML}}=0.73$, which is close to the average value across all of
 Antarctica ($\xi_{\mathrm{Ant.}}=0.71$), while the intermittency is stronger for
 the Vostok region ($\xi_{\mathrm{Vostok}}=0.82$). We parameterise the
 temperature--isotope correlation in the DML region with $c_0=0.4$ and
-$d_0=6000$\,km and with $c_0=0.5$ and $d_0=2500$\,km in the Vostok region
+$d_0=6000$\,km and in the Vostok region with $c_0=0.5$ and $d_0=2500$\,km
 (Fig.~\ref{fig:avg.cor.structure}). The only unconstrained parameter is the
 decorrelation length of the effect of precipitation intermittency,
 $\tau_{\mathrm{pw}}$, since it is unclear by which precipitation variable it is
-mainly goverend (total annual amount, seasonal amount or its distribution). An
+mainly governed (total annual amount, seasonal amount, or its distribution). An
 investigation with reanalysis data yielded scales between $\sim300$ to $500$\,km
 for different precipitation variables \citep{Munch2018a}, while our model data
 exhibits an average decorrelation length of $\sim600$\,km for the annual
@@ -1090,22 +1089,22 @@ parameterised by a partial conversion of the time series into white noise.
 \label{fig:conceptual.model}%
 \end{figure*}%
 
-In a similar manner as for analysing the climate model data, we now use our
-conceptual model to predict the two-dimensional ($N=2$) sampling correlation
-structures for the different model fields of $T_{\mathrm{2m}}$,
-$T_{\mathrm{2m}}^{\mathrm{(pw)}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$
-(Eqs.~\ref{eq:t2m.corr}, \ref{eq:t2m.pw.corr} and \ref{eq:oxy.pw.corr}). Since
-our model space is continuous, we sample from locations placed \emph{on}
-concentric rings around the target site. We either sample the two locations from
-the same ring or from two different rings, using ring radii from $0$ to
-$2000$\,km in increments of $10$\,km, and calculate the average correlation for
-a specific ring combination. To obtain meaningful expectation values, we choose
-$36$ locations distributed uniformly across each ring in steps of $10\degree$,
-combine these locations one by one for each ring combination, and average across
-the correlations from each location pair. With the model parameters for the DML
-and Vostok regions we obtain the results displayed in
-Fig.~(\ref{fig:conceptual.model}), which we discuss and compare to the estimated
-results from the climate model data in the main text.
+Similarly to analysing the climate model data, we now use our conceptual model
+to predict the two-dimensional ($N=2$) sampling correlation structures for the
+different model fields of $T_{\mathrm{2m}}$, $T_{\mathrm{2m}}^{\mathrm{(pw)}}$
+and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$ (Eqs.~\ref{eq:t2m.corr},
+\ref{eq:t2m.pw.corr} and \ref{eq:oxy.pw.corr}). Since our model space is
+continuous, we sample from locations placed \emph{on} concentric rings around
+the target site. We either sample the two locations from the same ring or from
+two different rings, using ring radii from $0$ to $2000$\,km in increments of
+$10$\,km, and calculate the average correlation for a specific ring
+combination. To obtain meaningful expectation values, we choose $36$ locations
+distributed uniformly across each ring in steps of $10\degree$, combine these
+locations one by one for each ring combination, and average across the
+correlations for each location pair. With the model parameters from the DML and
+Vostok regions we obtain the results displayed in
+Fig.~(\ref{fig:conceptual.model}), which are discussed and compared to the
+estimated results from the climate model data in the main text.
 
 \noappendix
 
