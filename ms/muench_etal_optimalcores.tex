@@ -186,7 +186,8 @@ In this study, we use the 1200-year ECHAM5/MPI-OM-wiso time series of two-meter
 surface air temperature ($T_{2\mathrm{m}}$), precipitation ($p$), and oxygen
 isotopic composition in precipitation (the relative abundance of oxygen-18 to
 oxygen-16 istopes, denoted as $\delta^{18}\mathrm{O}$) extracted from all model
-grid cells on the Antarctic continent ($N_{\mathrm{grid}}=442$).
+grid cells on the Antarctic continent
+\cite<$N_{\mathrm{grid}}=442$;>{Munch2020}.
 
 \subsection{Data Processing}\label{methods:prc}
 
@@ -196,13 +197,14 @@ latter is commonly achieved by averaging the isotopic data across annual layers
 of snow and ice, which are determined through a dating approach. The resulting
 annual isotopic composition data therefore include a weighting effect due to the
 intra-annual variability in the amount of precipitation. To account for this, we
-produce two versions of annual data from the monthly model output: (1) the
-two-meter temperature and oxygen isotopic composition data are averaged to an
-annual resolution without any weighting (denoted as $T_{2\mathrm{m}}$ and
-$\delta^{18}\mathrm{O}$ in the following), and (2) the respective monthly data
-are averaged to an annual resolution including the weighting by the monthly
-precipitation amount (denoted as precipitation-weighted data
-$T_{2\mathrm{m}}^{\mathrm{(pw)}}$ and $\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$).
+produce two versions of annual data from the monthly model output
+\cite{Munch2020}: (1) the two-meter temperature and oxygen isotopic composition
+data are averaged to an annual resolution without any weighting (denoted as
+$T_{2\mathrm{m}}$ and $\delta^{18}\mathrm{O}$ in the following), and (2) the
+respective monthly data are averaged to an annual resolution including the
+weighting by the monthly precipitation amount (denoted as precipitation-weighted
+data $T_{2\mathrm{m}}^{\mathrm{(pw)}}$ and
+$\delta^{18}\mathrm{O}^{\mathrm{(pw)}}$).
 
 \subsection{Data Analyses}\label{methods:main}
 
@@ -1178,7 +1180,25 @@ Figure~(\ref{fig:conceptual.model}), which are discussed and compared to the
 estimated results from the climate model data in the main text.
 
 \acknowledgments
-Enter acknowledgments, including your data availability statement, here.
+This project has received funding from the European Research Council (ERC) under
+the European Union's Horizon 2020 research and innovation programme  (grant
+agreement no.\ 716092) and was supported by Helmholtz funding through the Polar
+Regions and Coasts in the Changing Earth System (PACES) programme of the Alfred
+Wegener Institute. We thank Jesper Sjolte for performing the ECHAM5/MPI-OM-wiso
+past1000 model simulation. We acknowlege Mathieu Casado, Rapha\"{e}l H\'{e}bert
+and Torben Kunz for their helpful comments on this project. All plots and
+numerical analyses in this paper were carried out using the open-source software
+R: A Language and Environment for Statistical Computing.
+
+Data availability: The climate model data used in this study is freely available
+from the Zenodo database under \url{https://doi.org/10.5281/zenodo.4001565}
+\cite{Munch2020}.
+
+Code availability: Software to run the analyses and produce the figures is
+available as R code hosted in the public git repository at
+\url{https://github.com/EarthSystemDiagnostics/optimalcores}. A snapshot of the
+software code will be archived on the Zenodo database once the paper is
+accepted.
 
 \bibliography{muench_etal_optimalcores}
 
