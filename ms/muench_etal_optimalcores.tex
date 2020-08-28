@@ -1,35 +1,42 @@
-\documentclass[cp, manuscript]{copernicus}
+\documentclass[draft]{agujournal2019}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\linenumbers
+
+\draftfalse
+
+\journalname{JGR: Atmospheres}
 
 \begin{document}
 
 \title{How precipitation intermittency sets an optimal spatial sampling
   configuration for Antarctic ice cores}
 
-\Author[1]{Thomas}{M\"{u}nch}
-\Author[2]{Martin}{Werner}
-\Author[1,3]{Thomas}{Laepple}
+\authors{Thomas M\"{u}nch\affil{1}, Martin Werner\affil{2}, and Thomas
+  Laepple\affil{1,3}}
 
-\affil[1]{Alfred-Wegener-Institut Helmholtz-Zentrum f{\"u}r Polar- und
+\affiliation{1}{Alfred-Wegener-Institut Helmholtz-Zentrum f{\"u}r Polar- und
 Meeresforschung, Research Unit Potsdam, Telegrafenberg A45, 14473 Potsdam,
 Germany}
-\affil[2]{Alfred-Wegener-Institut Helmholtz-Zentrum f{\"u}r Polar- und
+\affiliation{2}{Alfred-Wegener-Institut Helmholtz-Zentrum f{\"u}r Polar- und
 Meeresforschung, Bussestra{\ss}e 24, 27570 Bremerhaven, Germany}
-\affil[3]{University of Bremen, MARUM~--~Center for Marine Environmental
+\affiliation{3}{University of Bremen, MARUM~--~Center for Marine Environmental
   Sciences and Faculty of Geosciences, 28334 Bremen, Germany}
 
-\correspondence{Thomas M\"unch (thomas.muench@awi.de)}
-\runningtitle{Optimal ice-core arrangement}
-\runningauthor{T. M\"unch et al.}
+\correspondingauthor{Thomas M\"unch}{thomas.muench@awi.de}
 
-\received{}
-\pubdiscuss{}
-\revised{}
-\accepted{}
-\published{}
-
-\firstpage{1}
-
-\maketitle
+\begin{keypoints}
+\item We analyse Holocene climate model data to find the optimal locations where
+  to sample Antarctic ice cores
+\item The spatial correlation scales of the temperature variations and of
+  precipitation intermittency set an effective sampling length scale
+\item A single core should be located at the target site of the temperature
+  reconstruction, a second one optimally lies more than 500 km away
+\end{keypoints}
 
 \begin{abstract} Many palaeoclimate proxies share one challenging property: they
 are not only driven by the climatic variable of interest, e.g., temperature, but
@@ -56,24 +63,19 @@ extended to determine optimal sampling strategies for other palaeoclimate
 reconstruction problems.
 \end{abstract}
 
-% \copyrightstatement{TEXT}
-
-\introduction
+\section{Introduction}\label{intro}
 
 The oxygen and hydrogen isotopic composition of firn and ice recovered from
 polar ice cores is a key proxy for past near-surface atmospheric temperature
-changes \citep{Dansgaard1964,Lorius1969,Masson-Delmotte2008,Sjolte2011}.
+changes \cite{Dansgaard1964,Lorius1969,Masson-Delmotte2008,Sjolte2011}.
 Although the physical mechanisms that link local changes in temperature to the
 isotopic composition of precipitated snow are generally well understood
-\citep{Dansgaard1964,Craig1965,Jouzel1984} and can be modelled with general
+\cite{Dansgaard1964,Craig1965,Jouzel1984} and can be modelled with general
 circulation models
-\citep{Joussaume1984,Werner2011,Werner2016,Sjolte2011,Goursaud2018}, the
+\cite{Joussaume1984,Werner2011,Werner2016,Sjolte2011,Goursaud2018}, the
 quantitative interpretation of ice-core isotope variability, in terms of
 temperature variability, is complicated by second-order processes that
-influence the isotopic record, adding noise \citep{Munch2018a}.
-% Here, an analysis of the typical spatial scales on which the different processes
-% act offers a way to minimise the variability which is not related to temperature
-% by identifying an optimal combination of locations to average ice-core records.
+influence the isotopic record, adding noise \cite{Munch2018a}.
 
 Specifically, the isotopic record that is derived from an ice core is the result
 of a chain of processes: (1) atmospheric temperature changes along with (2) isotopic
@@ -85,23 +87,23 @@ will be outlined in the following.
 
 Atmospheric temperature variations drive the isotopic composition fractionation
 of the atmospheric moisture along its pathway to the final stage of
-precipitation \citep{Dansgaard1964,Jouzel1984}. The spatial coherence of the
+precipitation \cite{Dansgaard1964,Jouzel1984}. The spatial coherence of the
 temperature-related isotopic signal in precipitation is hence determined by the
 spatial coherence of the variations of the atmospheric temperature field
 itself. Typical spatial decorrelation scales for temperature anomalies are on
-the order of $\gtrsim1000$\,km \citep{Jones1997}, which implies that ice cores
+the order of $\gtrsim1000$\,km \cite{Jones1997}, which implies that ice cores
 distributed on spatial scales below $\sim 1000$\,km should typically record a
 similar, i.e., correlated, temperature signal. However, the temporal variability
 of the isotopic composition in the local atmospheric moisture also depends on
 the variability of the atmospheric circulation, since different air masses may
-exhibit different source regions and distillation pathways \citep{Schlosser2004,
+exhibit different source regions and distillation pathways \cite{Schlosser2004,
 Sodemann2008a,Birks2009,Kuttel2012}. In addition, the isotopic composition
 profile across a deposited layer of snow will not directly reflect the temporal
 variability of the atmospheric isotopic signal due to the intermittent nature of
-precipitation \citep{Schleiss2015}. By this, the initial isotope signal is
+precipitation \cite{Schleiss2015}. By this, the initial isotope signal is
 weighted with the amount of precipitation, which introduces bias
-\citep{Steig1994,Laepple2011a} and adds additional variability to the isotopic
-record \citep{Persson2011,Casado2020}. The latter two processes are linked to
+\cite{Steig1994,Laepple2011a} and adds additional variability to the isotopic
+record \cite{Persson2011,Casado2020}. The latter two processes are linked to
 atmospheric dynamics and their typical spatial scales range from the mesoscale
 (i.e., tens of kilometres), driven by topography and orographic effects, to
 synoptic scales of hundreds of kilometres, associated with cyclonic activity and
@@ -109,8 +111,8 @@ the movement of high and low pressure systems. Finally, in polar conditions, the
 precipitated snow does not directly settle but is constantly eroded, blown away,
 and redeposited. These depositional processes have been shown to give rise to
 stratigraphic noise in the isotopic record
-\citep{Fisher1985,Munch2016,Laepple2016}, which exhibits a small-scale
-decorrelation scale of a few metres \citep{Munch2016}.%
+\cite{Fisher1985,Munch2016,Laepple2016}, which exhibits a small-scale
+decorrelation scale of a few metres \cite{Munch2016}.%
 \footnote{We note that the final isotopic record is also influenced by
   potential snow--atmosphere vapour exchange at the surface and by
   post-depositional processes within the snow and ice matrix, such as
@@ -126,13 +128,13 @@ would be sufficient to average records spaced only tens of metres apart, as this
 would ensure highly correlated temperature signals but uncorrelated
 stratigraphic noise between the records. However, comparing correlation-based
 signal-to-noise ratios derived from nearby isotope records
-\citep{Munch2016,Munch2017} with the signal-to-noise ratios estimated from
-analysing the records' temporal variability \citep{Laepple2018} shows that
+\cite{Munch2016,Munch2017} with the signal-to-noise ratios estimated from
+analysing the records' temporal variability \cite{Laepple2018} shows that
 reproducibility on a local scale does not necessarily imply a climatic, i.e.,
 temperature-driven, origin. Instead, circulation variability and precipitation
 intermittency act as additional noise sources which are likely to exhibit larger
 decorrelation lengths than the stratigraphic noise
-\citep{Laepple2018,Munch2018a}. Taking this into account, we expect there to be
+\cite{Laepple2018,Munch2018a}. Taking this into account, we expect there to be
 an optimal length scale, which lies in between the local and the temperature
 decorrelation scales and which results in a trade-off between averaging out
 atmospheric circulation and precipitation intermittency effects, while also
@@ -158,26 +160,27 @@ isotope fields, and with the noise generated by precipitation intermittency.
 
 \subsection{Climate model data}\label{methods:data}
 
-We use data from the past-millennium simulation (800--1999\,CE;
-\citealp{Sjolte2018}) of the fully coupled ECHAM5/MPI-OM-wiso atmosphere--ocean
-general circulation model equipped with stable isotope diagnostics
-\citep{Werner2016}. This simulation is forced by greenhouse gases, volcanic
-aerosols, total solar irradiance, land use changes, and changes in the Earth's
-orbital parameters. The model's atmospheric component ECHAM5-wiso is run with
-a T31 spectral resolution ($3.75\degree\times3.75\degree$) and with $19$
-vertical levels \citep{Sjolte2018}. Compared to observations, the climatological
-relationship between temperature and the precipitation isotopic composition is
-reproduced well by the model, but it is biased towards warm temperatures in the
-T31 setup and its isotopic composition is not depleted enough over Antarctica
-\citep{Werner2011}. These issues can be improved upon by using a higher spatial
-resolution \citep{Werner2011}; however, such a higher-resolution model is not
-needed for our study, since we are mainly interested in the relative variability
-between sites and not in the absolute temperature or isotope values. The full
-atmosphere--ocean model was compared to observational data and palaeoclimate
-records for two equilibrium simulations under pre-industrial and Last Glacial
-Maximum conditions \citep{Werner2016}, and the past-millennium simulation was
-used to reconstruct North Atlantic atmospheric circulation in combination with
-ice-core isotope data \citep{Sjolte2018}.
+We use data from the past-millennium simulation
+\cite<800--1999\,CE;>{Sjolte2018} of the fully coupled ECHAM5/MPI-OM-wiso
+atmosphere--ocean general circulation model equipped with stable isotope
+diagnostics \cite{Werner2016}. This simulation is forced by greenhouse gases,
+volcanic aerosols, total solar irradiance, land use changes, and changes in the
+Earth's orbital parameters. The model's atmospheric component ECHAM5-wiso is run
+with a T31 spectral resolution ($3.75$\textdegree$\times3.75$\textdegree) and
+with $19$ vertical levels \cite{Sjolte2018}. Compared to observations, the
+climatological relationship between temperature and the precipitation isotopic
+composition is reproduced well by the model, but it is biased towards warm
+temperatures in the T31 setup and its isotopic composition is not depleted
+enough over Antarctica \cite{Werner2011}. These issues can be improved upon by
+using a higher spatial resolution \cite{Werner2011}; however, such a
+higher-resolution model is not needed for our study, since we are mainly
+interested in the relative variability between sites and not in the absolute
+temperature or isotope values. The full atmosphere--ocean model was compared to
+observational data and palaeoclimate records for two equilibrium simulations
+under pre-industrial and Last Glacial Maximum conditions \cite{Werner2016}, and
+the past-millennium simulation was used to reconstruct North Atlantic
+atmospheric circulation in combination with ice-core isotope data
+\cite{Sjolte2018}.
 
 In this study, we use the 1200-year ECHAM5/MPI-OM-wiso time series of two-metre
 surface air temperature ($T_{2\mathrm{m}}$), precipitation ($p$), and oxygen
@@ -287,17 +290,18 @@ which include existing deep ice-core drilling sites as well as large arrays of
 shallower ice and firn cores.
 
 For the DML region, we choose all model grid cells ($N_{\mathrm{grid}}=26$)
-within a range of $\pm17.5\degree$ longitude and $\pm5\degree$ latitude around
-the European Project for Ice Coring in Antarctica (EPICA) DML site (EDML;
-$-75\degree$\,S, $0\degree$\,E; Fig.~\ref{fig:concept}). This region encompasses
-the site of the deep EDML ice core \citep{EPICAcommunitymembers2006,awi2016} and
-$>50$ firn and shallow ice cores \citep{Altnau2015}. For the Vostok region, we
-choose an identical latitudinal and longitudinal coverage
-($N_{\mathrm{grid}}=30$) with respect to the Vostok station ($-78.47\degree$\,S,
-$106.83\degree$\,E; Fig.~\ref{fig:concept}), encompassing the deep Vostok and
-Dome C ice cores, several shallower cores \citep{Stenni2017}, and the new deep
-drilling site (``Little Dome C'') where an ice core extending back more than one
-million years is envisaged \citep{Passalacqua2018}.
+within a range of $\pm17.5$\textdegree\ longitude and $\pm5$\textdegree\
+latitude around the European Project for Ice Coring in Antarctica (EPICA) DML
+site (EDML; $-75$\textdegree\,S, $0$\textdegree\,E;
+Fig.~\ref{fig:concept}). This region encompasses the site of the deep EDML ice
+core \cite{EPICAcommunitymembers2006,awi2016} and $>50$ firn and shallow ice
+cores \cite{Altnau2015}. For the Vostok region, we choose an identical
+latitudinal and longitudinal coverage ($N_{\mathrm{grid}}=30$) with respect to
+the Vostok station ($-78.47$\textdegree\,S, $106.83$\textdegree\,E;
+Fig.~\ref{fig:concept}), encompassing the deep Vostok and Dome C ice cores,
+several shallower cores \cite{Stenni2017}, and the new deep drilling site
+(``Little Dome C'') where an ice core extending back more than one million years
+is envisaged \cite{Passalacqua2018}.
 
 \section{Results}\label{results}
 
@@ -684,7 +688,7 @@ model data.
 To model the atmospheric temperature field, we assume an isotropic exponential
 decay of the spatial correlation with a constant decorrelation length
 (Appendix~\ref{app:concept.model.t2m}). Such an exponential temperature
-decorrelation is a commonly observed feature \citep{Jones1997} and also
+decorrelation is a commonly observed feature \cite{Jones1997} and also
 confirmed by our climate model data (Fig.~\ref{fig:t2m.decorrelation.map} and
 Fig.~\ref{fig:avg.cor.structure}). Given this relationship, we find a good
 agreement for the two-dimensional sampling correlation structure between the
@@ -699,7 +703,7 @@ the locations.
 To elucidate the role of precipitation intermittency, we follow the simplest
 assumption which is that this process can be described by partly aliasing the
 original temperature signal into temporal white noise
-\citep{Laepple2018,Casado2020}. We further assume that this noise is not
+\cite{Laepple2018,Casado2020}. We further assume that this noise is not
 independent between sites but that it follows the spatial scale of precipitation
 events, which we describe as an exponential decorrelation in space with a second
 length scale (Appendix~\ref{app:concept.model.t2m.pw}). This intermittency
@@ -818,7 +822,7 @@ and remove the impact of local stratigraphic noise from the actual measured
 records (assuming that any further processes in the pre-depositional to
 depositional phase contribute negligibly to the local isotopic variations). To
 accomplish this one possible strategy would be to use trench sampling campaigns
-(see \citealp{Munch2016,Munch2017} for the EDML site). Then, one test of our
+\cite<see>[for the EDML site]{Munch2016,Munch2017}. Then, one test of our
 optimal sampling configurations could be to combine one trench record, e.g., one
 from EDML, with another trench sampled at the optimal distance based on our
 results for $N=2$, and correlate the average of these two trench records with
@@ -829,7 +833,7 @@ such an approach would be challenging due to the small amount of available
 instrumental data ($\sim20$\,years for EDML) and by the inevitable dating
 uncertainties between the two trench records.
 
-\conclusions
+\section{Conclusions}
 
 In this study we assessed the spatial sampling configuration of ice cores to
 optimally reconstruct the annual near-surface temperature at a specific target
@@ -903,7 +907,7 @@ climatic field (sampling correlation structure). Our model assumes simple
 isotropic and exponential decorrelation structures for the involved climatic
 fields and is based on previous work which suggests that precipitation
 intermittency can be described by partly aliasing the original temperature
-signal into white noise \citep{Laepple2018}.
+signal into white noise \cite{Laepple2018}.
 
 In the model, we consider a temperature time series $T_0$ at some target site
 $\mathbf{r}_0$ and a field $x$ of a given climate variable. From this field, we
@@ -915,23 +919,28 @@ by $r_i=|\mathbf{r}_i-\mathbf{r}_0|$ and by
 $d_{ij}=|{\mathbf{r}_i-\mathbf{r}_j}|$, respectively. The correlation between
 $T_0$ and $\overline{x}$ follows from
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:corr.general}
 \mathrm{cor}(T_0,\overline{x})=\frac
 {\mathrm{cov}(T_0,\overline{x})}
 {\sqrt{\mathrm{var}(T_0)\mathrm{var}(\overline{x})}},
 \end{equation}
+\end{linenomath*}
 and it is governed by the covariance between the temperature at the target site
 and the climate field at the sampling locations $\mathbf{r}_i$,
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:cov.general}
 \mathrm{cov}(T_0,\overline{x})=
 \frac{1}{N}\sum_{i}^{N}{\mathrm{cov}(T_0,x_i)},
 \end{equation}
+\end{linenomath*}
 %
 and by the covariance between the sampling locations through the variance of
 their spatial average,
+\begin{linenomath*}
 \begin{equation}
 \label{eq:var.general}
 \mathrm{var}(\overline{x})=
@@ -940,6 +949,7 @@ their spatial average,
 2\sum_{i}^{N-1}\sum_{j}^{N}{\mathrm{cov}(x_i,x_j)}
 \right).
 \end{equation}
+\end{linenomath*}
 %
 In our model, these quantities depend on the distance between sites and on the
 correlation structure of the respective field $x$, as we show in the following.
@@ -952,15 +962,18 @@ constant variance, $\mathrm{var}(T_0)=\mathrm{var}(T_i)\equiv\sigma_T^2$, and an
 isotropic decorrelation following an exponential decay with a decorrelation
 length $\tau$; i.e., the covariance between sites is
 %
+\begin{linenomath*}
 \begin{align}
 \label{eq:t2m.decorr}
 \mathrm{cov}(T_0,T_i)&=\sigma_T^2\exp{\left(-\frac{r_i}{\tau}\right)},\\
 \mathrm{cov}(T_i,T_j)&=\sigma_T^2\exp{\left(-\frac{d_{ij}}{\tau}\right)}.
 \end{align}
+\end{linenomath*}
 %
 The correlation between the target site temperature and the spatial average of
 $N$ temperature time series is then obtained from
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:t2m.corr}
 \mathrm{cor}(T_0,\overline{T})=
@@ -968,22 +981,25 @@ $N$ temperature time series is then obtained from
 {\sqrt{N+2\sum_{i=1}^{N-1}
 \sum_{j=i+1}^{N}{\exp{\left(-\frac{d_{ij}}{\tau}\right)}}}}.
 \end{equation}
+\end{linenomath*}
 
 \subsection{Precipitation-weighted temperature}
 \label{app:concept.model.t2m.pw}
 
 To model the effect of precipitation intermittency, we follow
-\citet{Laepple2018} and assume that precipitation intermittency redistributes
+\citeA{Laepple2018} and assume that precipitation intermittency redistributes
 the energy of the temperature time series constantly across frequencies,
 i.e., creating temporal white noise without changing the total variance. Then,
 the precipitation-weighted temperature time series at location $\mathbf{r}_i$
 arises from $T_i$ as
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:precip.weighting}
 T_i^{\mathrm{(pw)}}=
 \left(1-\xi\right)^{1/2}T_i + \xi^{1/2} \sigma_T \varepsilon_i(0,1),
 \end{equation}
+\end{linenomath*}
 %
 where $\varepsilon_i(0,1)$ are independent and normally distributed random
 variables with a mean of zero and a standard deviation of $1$. The parameter
@@ -992,11 +1008,13 @@ which is aliased into white noise.
 
 The covariance between the target site temperature and a precipitation-weighted
 temperature time series is then
+\begin{linenomath*}
 \begin{equation}
 \label{eq:t2m.pw.decorr}
 \mathrm{cov}(T_0,T_i^{\mathrm{(pw)}})=
 (1-\xi)^{1/2}\sigma_T^2\exp{\left(-\frac{r_i}{\tau}\right)},
 \end{equation}
+\end{linenomath*}
 %
 which implies that the spatial correlation structure between $T_0$ and the
 precipitation-weighted temperature follows the same exponential decay as
@@ -1012,17 +1030,20 @@ with a decay length $\tau_{\mathrm{pw}}$. Based on these assumptions, the
 spatial covariance between sites of the white noise terms induced by the effect
 of precipitation intermittency has the form
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:noise.cov}
 \mathrm{cov}(\varepsilon_i,\varepsilon_j)=
 \exp{\left(-\frac{d_{ij}}{\tau_{\mathrm{pw}}}\right)}.
 \end{equation}
+\end{linenomath*}
 %
 Then, the correlation between the target site temperature and the spatial
 average of $N$ precipitation-weighted temperature time series is governed by the
 intermittency factor $\xi$ and by the two spatial length scales $\tau$ and
 $\tau_{\mathrm{pw}}$,
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:t2m.pw.corr}
 \mathrm{cor}\left(T_0,\overline{T}^{\mathrm{(pw)}}\right)=
@@ -1031,14 +1052,17 @@ $\tau_{\mathrm{pw}}$,
 {\sqrt{N + 2\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}
   g(d_{ij}; \tau, \tau_{\mathrm{pw}}, \xi)}},
 \end{equation}
+\end{linenomath*}
 %
 with
+\begin{linenomath*}
 \begin{equation}
 \label{eq:exp.fun}
 g(d_{ij}; \tau, \tau_{\mathrm{pw}}, \xi):=
 (1-\xi)\exp{\left(-\frac{d_{ij}}{\tau}\right)} +
 \xi\exp{\left(-\frac{d_{ij}}{\tau_{\mathrm{pw}}}\right)}.
 \end{equation}
+\end{linenomath*}
 
 \subsection{Precipitation-weighted oxygen isotope composition}
 \label{app:concept.model.oxy.pw}
@@ -1052,6 +1076,7 @@ correlation between the target site temperature and the spatial average of $N$
 $\delta^{\mathrm{(pw)}}$ time series is obtained in a similar manner as for
 $T^{\mathrm{(pw)}}$, i.e.,
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:oxy.pw.corr}
 \mathrm{cor}\left(T_0,
@@ -1061,6 +1086,7 @@ $T^{\mathrm{(pw)}}$, i.e.,
 {\sqrt{N + 2\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}
   g(d_{ij}; \tau_{\delta}, \tau_{\mathrm{pw}}, \xi)}},
 \end{equation}
+\end{linenomath*}
 %
 where $\tau_{\delta}$ is the decorrelation length of the $\delta$ field and the
 only difference to Eq.~\eqref{eq:t2m.pw.corr} is the unknown spatial correlation
@@ -1069,6 +1095,7 @@ field, $\mathrm{cor}\left(T_0,\delta_i\right)$.  Based on our climate model
 results (Fig.~\ref{fig:avg.cor.structure}), we parameterise this function with a
 simple linear decay of the form
 %
+\begin{linenomath*}
 \begin{equation}
 \label{eq:t2m.oxy.corr}
 \mathrm{cor}\left(T_0,\delta_i\right)=
@@ -1077,6 +1104,7 @@ simple linear decay of the form
   0, & d > d_0,
 \end{cases}
 \end{equation}
+\end{linenomath*}
 %
 where $\gamma=c_0/d_0$ and $d_0$ is some threshold distance above which
 the correlation is zero.
@@ -1104,7 +1132,7 @@ decorrelation length of the effect of precipitation intermittency,
 $\tau_{\mathrm{pw}}$, since it is unclear by which precipitation variable it is
 mainly governed (total annual amount, seasonal amount, or its distribution). An
 investigation with reanalysis data yielded scales between $\sim300$ to $500$\,km
-for different precipitation variables \citep{Munch2018a}, while our model data
+for different precipitation variables \cite{Munch2018a}, while our model data
 exhibits an average decorrelation length of $\sim600$\,km for the annual
 precipitation amount. Here, for the conceptual model we choose a value of
 $500$\,km.
@@ -1144,23 +1172,16 @@ the target site. We either sample the two locations from the same ring or from
 two different rings, using ring radii from $0$ to $2000$\,km in increments of
 $10$\,km, and calculate the average correlation for a specific ring
 combination. To obtain meaningful expectation values, we choose $36$ locations
-distributed uniformly across each ring in steps of $10\degree$, combine these
-locations one by one for each ring combination, and average across the
+distributed uniformly across each ring in steps of $10$\textdegree, combine
+these locations one by one for each ring combination, and average across the
 correlations for each location pair. With the model parameters from the DML and
 Vostok regions we obtain the results displayed in
 Fig.~(\ref{fig:conceptual.model}), which are discussed and compared to the
 estimated results from the climate model data in the main text.
 
-\noappendix
+\acknowledgments
+Enter acknowledgments, including your data availability statement, here.
 
-% \authorcontribution{TEXT} %% this section is mandatory
-% \competinginterests{TEXT} %% this section is mandatory even if you declare that no competing interests are present
-% \disclaimer{TEXT} %% optional section
-
-% \begin{acknowledgements}
-% \end{acknowledgements}
-
-\bibliographystyle{copernicus}
 \bibliography{muench_etal_optimalcores}
 
 \end{document}
